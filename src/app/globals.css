@@ -5,6 +5,42 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Vendora E-Commerce Brand Colors */
+  /* Primary (Blue) — trust, brand, links, header */
+  --color-brand-primary-50: #E6F1FB;
+  --color-brand-primary-200: #85B7EB;
+  --color-brand-primary-400: #378ADD;
+  --color-brand-primary-600: #185FA5;
+  --color-brand-primary-800: #0C447C;
+
+  /* Secondary (Teal) — verified, success, in-stock */
+  --color-brand-secondary-50: #E1F5EE;
+  --color-brand-secondary-200: #5DCAA5;
+  --color-brand-secondary-400: #1D9E75;
+  --color-brand-secondary-600: #0F6E56;
+  --color-brand-secondary-800: #085041;
+
+  /* Accent (Amber) — add to cart, flash sale, discount tag */
+  --color-brand-accent-50: #FAEEDA;
+  --color-brand-accent-100: #FAC775;
+  --color-brand-accent-200: #EF9F27;
+  --color-brand-accent-400: #BA7517;
+  --color-brand-accent-600: #854F0B;
+
+  /* Semantic (Red) — error, out of stock, cancelled */
+  --color-brand-semantic-50: #FCEBEB;
+  --color-brand-semantic-200: #F09595;
+  --color-brand-semantic-400: #E24B4A;
+  --color-brand-semantic-600: #A32D2D;
+  --color-brand-semantic-800: #791F1F;
+
+  /* Core Aliases for easy usage */
+  --color-brand-blue: var(--color-brand-primary-600);
+  --color-brand-teal: var(--color-brand-secondary-600);
+  --color-brand-amber: var(--color-brand-accent-200);
+  --color-brand-red: var(--color-brand-semantic-400);
+
+  /* Default UI Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);

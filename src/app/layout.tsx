@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Enterprise-ready Next.js template with best practices",
 };
 
+import Header from "@/components/layout/header/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,9 +27,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#F9FAFB] overflow-x-hidden">
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
