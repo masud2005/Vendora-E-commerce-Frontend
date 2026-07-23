@@ -41,8 +41,8 @@ export default function BottomNav() {
                 <Link
                   key={idx}
                   href={link.href}
-                  className={`px-4 py-3.5 text-base font-semibold transition-colors flex items-center ${isActive
-                    ? 'text-brand-accent-200'
+                  className={`px-4 py-3.5 text-base font-medium transition-colors flex items-center ${isActive
+                    ? 'text-brand-accent-200 font-bold!'
                     : 'text-white hover:text-brand-accent-200'
                     }`}
                 >
