@@ -18,10 +18,10 @@ export default function Footer() {
     <footer className="bg-white pt-16  border-t border-gray-200">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-5 space-y-10 md:space-y-0 md:gap-8 xl:gap-12 mb-16">
 
           {/* Column 1: Brand & Description */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <span className="text-2xl font-bold text-brand-primary-600 tracking-tight">Vendora</span>
             </Link>
