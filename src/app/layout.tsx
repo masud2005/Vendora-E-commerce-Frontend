@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F9FAFB] overflow-x-hidden">
+      <body className="min-h-full flex flex-col bg-brand-primary-50! overflow-x-hidden">
         <Header />
         <main className="flex-1">
           {children}
