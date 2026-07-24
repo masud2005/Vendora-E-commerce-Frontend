@@ -2,7 +2,7 @@
 
 export default function CouponSection() {
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 sm:p-5 mb-5">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4 sm:p-5 mb-5">
       <label
         htmlFor="coupon-code"
         className="block text-sm font-semibold text-gray-900 mb-3"
