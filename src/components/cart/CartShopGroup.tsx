@@ -22,9 +22,9 @@ export default function CartShopGroup({
     : "S";
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-6">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden mb-6">
       {/* Shop Header */}
-      <div className="flex items-center justify-between px-4 py-4 sm:px-6 bg-gray-50/50 border-b border-gray-100">
+      <div className="flex items-center justify-between px-4 py-4 sm:px-6 bg-gray-50/50 border-b border-gray-200">
         <div className="flex items-center gap-3">
           {/* Shop Avatar */}
           <div className="size-9 sm:size-10 rounded-full bg-brand-primary-50 border border-brand-primary-200 flex items-center justify-center text-brand-primary-600 font-bold text-xs sm:text-sm shrink-0">
@@ -57,7 +57,7 @@ export default function CartShopGroup({
       </div>
 
       {/* Shop Items List */}
-      <div className="px-4 sm:px-6 divide-y divide-gray-100">
+      <div className="px-4 sm:px-6 divide-y divide-gray-200">
         {children}
       </div>
     </div>
