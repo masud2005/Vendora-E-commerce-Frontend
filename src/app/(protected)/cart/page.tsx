@@ -62,7 +62,7 @@ export default function CartPage() {
 
   return (
     <div className="min-h-screen bg-brand-primary-50">
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-8">
         
         {/* Page Heading */}
         <div className="flex items-baseline gap-2 mb-6 sm:mb-8">

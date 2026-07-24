@@ -22,8 +22,8 @@ export default function OrderSummary({
   const paymentMethods = ["SSLCOMMERZ", "Stripe"];
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 sm:p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-5 pb-1">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 sm:p-6">
+      <h3 className="text-lg font-bold text-gray-900 border-b border-gray-200 pb-3 mb-4">
         Order Summary
       </h3>
 
@@ -56,7 +56,7 @@ export default function OrderSummary({
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-100 my-2" />
+        <div className="border-t border-gray-200 my-2" />
 
         {/* Total */}
         <div className="flex justify-between items-center py-1">
@@ -87,7 +87,7 @@ export default function OrderSummary({
           {paymentMethods.map((method) => (
             <span
               key={method}
-              className="px-2.5 py-1 text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider bg-gray-50 border border-gray-100 rounded-md select-none"
+              className="px-2.5 py-1 text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider bg-gray-50 border border-gray-200 rounded-md select-none"
             >
               {method}
             </span>

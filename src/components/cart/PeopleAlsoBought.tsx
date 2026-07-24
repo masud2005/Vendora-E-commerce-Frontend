@@ -44,10 +44,10 @@ export default function PeopleAlsoBought() {
         {recommendations.map((product) => (
           <div
             key={product.id}
-            className="group bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300 flex flex-col"
+            className="group bg-white rounded-lg border border-gray-200 p-3 sm:p-4 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 flex flex-col gap-3"
           >
-            {/* Image container */}
-            <div className="aspect-square w-full overflow-hidden bg-gray-50 flex items-center justify-center relative">
+            {/* Image container inside card padding */}
+            <div className="aspect-square w-full overflow-hidden bg-gray-50 flex items-center justify-center relative rounded-lg border border-gray-100">
               <img
                 src={product.image}
                 alt={product.title}
@@ -55,8 +55,8 @@ export default function PeopleAlsoBought() {
               />
             </div>
 
-            {/* Info */}
-            <div className="p-3 flex flex-col flex-1 justify-between gap-1">
+            {/* Info inside card padding */}
+            <div className="flex flex-col gap-1 flex-1 justify-between">
               <h4 className="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 hover:text-brand-primary-600 transition-colors leading-tight cursor-pointer">
                 {product.title}
               </h4>
