@@ -25,7 +25,7 @@ export default function ContactDetails() {
   ];
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 sm:p-6 flex flex-col gap-6">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 sm:p-6 md:p-4 flex flex-col gap-6">
       <h3 className="text-base sm:text-lg font-extrabold text-gray-900 tracking-tight">
         Contact Details
       </h3>
@@ -33,10 +33,10 @@ export default function ContactDetails() {
       {/* Info Rows */}
       <div className="flex flex-col gap-5">
         {details.map((item) => (
-          <div key={item.id} className="flex gap-4 items-start">
+          <div key={item.id} className="flex gap-3 lg:gap-4 items-start">
             {/* Icon Badge */}
             <div className="size-10 rounded-lg bg-[#EBF2F7]/70 border border-brand-primary-200 flex items-center justify-center text-brand-primary-600 shrink-0">
-              <item.icon className="size-5" />
+              <item.icon className="size-4 lg:size-5" />
             </div>
             
             {/* Text details */}

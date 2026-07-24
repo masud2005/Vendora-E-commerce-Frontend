@@ -15,10 +15,10 @@ export default function ContactPage() {
         <ContactHeader />
 
         {/* Form and Info Grid Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mt-6 sm:mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start mt-6 sm:mt-10">
           
           {/* Left Column: Contact Details + Stylized Map */}
-          <div className="lg:col-span-1 flex flex-col gap-6 w-full">
+          <div className="md:col-span-1 flex flex-col gap-6 w-full">
             <ContactDetails />
             
             {/* HQ Map Card */}
@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <div className="absolute inset-0 bg-black/5" />
                 
                 {/* Absolute Pin Badge */}
-                <div className="absolute bg-white rounded-lg border border-gray-200/80 shadow-md px-3.5 py-1.5 flex items-center gap-1.5 text-xs font-bold text-gray-900 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 group-hover:scale-105 select-none">
+                <div className="absolute bg-white rounded-lg border border-gray-200/80 shadow-md px-3.5 py-1.5 flex items-center gap-1.5 text-xs font-bold text-gray-900  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-transform duration-300 group-hover:scale-105 select-none">
                   <MapPin className="size-4 text-brand-primary-600 animate-bounce" />
                   <span>Vendora HQ</span>
                 </div>
@@ -43,7 +43,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Send Message Form */}
-          <div className="lg:col-span-2 w-full">
+          <div className="md:col-span-2 w-full">
             <ContactForm />
           </div>
 
