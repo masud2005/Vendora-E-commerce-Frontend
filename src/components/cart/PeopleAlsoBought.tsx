@@ -1,5 +1,7 @@
 "use client";
 
+import ProductCard from "@/components/shared/ProductCard";
+
 interface RecommendedProduct {
   id: number;
   title: string;
@@ -40,31 +42,9 @@ export default function PeopleAlsoBought() {
       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-5 sm:mb-6">
         People Also Bought
       </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-5">
         {recommendations.map((product) => (
-          <div
-            key={product.id}
-            className="group bg-white rounded-lg border border-gray-200 p-3 sm:p-4 shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 flex flex-col gap-3"
-          >
-            {/* Image container inside card padding */}
-            <div className="aspect-square w-full overflow-hidden bg-gray-50 flex items-center justify-center relative rounded-lg border border-gray-100">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Info inside card padding */}
-            <div className="flex flex-col gap-1 flex-1 justify-between">
-              <h4 className="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 hover:text-brand-primary-600 transition-colors leading-tight cursor-pointer">
-                {product.title}
-              </h4>
-              <p className="text-xs sm:text-sm font-bold text-brand-primary-600 mt-1">
-                ${product.price.toFixed(2)}
-              </p>
-            </div>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import HeroSlider from '@/components/home/HeroSlider';
 import ShopByCategory from '@/components/home/ShopByCategory';
 import FlashSale from '@/components/home/FlashSale';
 import TrendingProducts from '@/components/home/TrendingProducts';
+import BestSellingProducts from '@/components/home/BestSellingProducts';
 import OfficialPartners from '@/components/home/OfficialPartners';
 import NewArrivals from '@/components/home/NewArrivals';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <TrendingProducts />
       <OfficialPartners />
       <NewArrivals />
+      <BestSellingProducts />
     </div>
   );
 }
