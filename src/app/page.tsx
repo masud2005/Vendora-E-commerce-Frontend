@@ -1,6 +1,7 @@
 import HeroSlider from '@/components/home/HeroSlider';
 import ShopByCategory from '@/components/home/ShopByCategory';
 import FlashSale from '@/components/home/FlashSale';
+import TrendingProducts from '@/components/home/TrendingProducts';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSlider />
       <ShopByCategory />
       <FlashSale />
+      <TrendingProducts />
     </div>
   );
 }
