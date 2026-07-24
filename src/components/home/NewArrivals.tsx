@@ -52,7 +52,7 @@ export default function NewArrivals() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5">
           {newArrivalProducts.map((product) => (
             <Link
               key={product.id}
