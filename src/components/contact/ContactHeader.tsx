@@ -46,7 +46,7 @@ export default function ContactHeader() {
         </div>
 
         {/* Right: Support Hero Image */}
-        <div className="w-full md:w-[48%] max-w-125 md:max-w-none shrink-0 relative rounded-2xl overflow-hidden shadow-lg border border-gray-150">
+        <div className="w-full md:w-[48%] max-w-125 md:max-w-none shrink-0 relative rounded-lg overflow-hidden shadow-lg border border-gray-150">
           <img
             src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&q=80&w=800"
             alt="Customer Success Support"

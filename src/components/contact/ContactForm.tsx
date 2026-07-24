@@ -91,7 +91,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-3 mt-1.5">
           <button
             type="submit"
-            className="w-full sm:w-auto bg-brand-primary-600 hover:bg-brand-primary-800 text-white font-bold py-3 px-6 rounded-md text-sm transition-all duration-200 self-start shadow-xs hover:shadow-md cursor-pointer"
+            className="w-full sm:w-auto bg-brand-primary-600 hover:bg-brand-primary-800 text-white font-bold py-3 px-6 rounded text-sm transition-all duration-200 self-start shadow-xs hover:shadow-md cursor-pointer"
           >
             Send Message
           </button>
