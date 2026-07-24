@@ -14,7 +14,7 @@ export default function CouponSection() {
           id="coupon-code"
           type="text"
           placeholder="Enter code"
-          className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3.5 py-2 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-brand-primary-400 focus:ring-2 focus:ring-brand-primary-50 transition-all"
+          className="flex-1 min-w-0 border focus:border-brand-primary-400 rounded-lg px-3.5 py-2 text-sm  placeholder-gray-400 focus:outline-none  focus:ring-2 focus:ring-brand-primary-50 transition-all"
         />
         <button
           type="button"

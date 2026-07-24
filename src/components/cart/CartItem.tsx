@@ -18,7 +18,7 @@ export default function CartItem({
   quantity,
 }: CartItemProps) {
   return (
-    <div className="flex gap-4 py-6 border-b last:border-b-0 border-gray-200 items-start">
+    <div className="flex gap-4 py-6 last:border-b-0  border-gray-200 items-start">
       {/* Product Image */}
       <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
         <img
