@@ -13,7 +13,7 @@ const slides = [
     button1Link: "/shop",
     button2Text: "View Deals",
     button2Link: "/deals",
-    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=1600",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1600",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const slides = [
     button1Link: "/category/fashion",
     button2Text: "View Lookbook",
     button2Link: "/lookbook",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=1600",
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=1600",
   }
 ];
 
