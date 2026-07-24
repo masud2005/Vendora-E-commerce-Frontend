@@ -66,11 +66,12 @@ export default function Header() {
           }`}
       >
         {/* TopBar with smooth collapse animation */}
-        <div
-          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${hideExtraBars ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'
-            }`}
+        <div 
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+            hideExtraBars ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'
+          }`}
         >
-          <div className="overflow-hidden min-h-0">
+          <div className={`min-h-0 ${hideExtraBars ? 'overflow-hidden' : 'overflow-visible'}`}>
             <TopBar />
           </div>
         </div>
@@ -81,11 +82,12 @@ export default function Header() {
         </div>
 
         {/* BottomNav with smooth collapse animation */}
-        <div
-          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${hideExtraBars ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'
-            }`}
+        <div 
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+            hideExtraBars ? 'grid-rows-[0fr] opacity-0' : 'grid-rows-[1fr] opacity-100'
+          }`}
         >
-          <div className="overflow-hidden min-h-0">
+          <div className={`min-h-0 ${hideExtraBars ? 'overflow-hidden' : 'overflow-visible'}`}>
             <BottomNav />
           </div>
         </div>
