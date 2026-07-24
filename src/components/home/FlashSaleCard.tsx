@@ -45,7 +45,7 @@ export default function FlashSaleCard({ product }: { product: FlashSaleProduct }
 
         <div className="flex items-center justify-between mb-4 mt-auto pt-2">
           <div className="flex items-end space-x-2">
-            <span className="text-brand-primary-600 font-bold text-lg leading-none">
+            <span className="text-brand-primary-600 font-bold text-base md:text-lg leading-none">
               ${product.currentPrice.toLocaleString()}
             </span>
             <span className="text-gray-400 text-xs line-through leading-none pb-0.5">

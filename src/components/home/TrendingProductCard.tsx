@@ -44,7 +44,7 @@ export default function TrendingProductCard({ product }: { product: TrendingProd
         </h3>
 
         {/* Price */}
-        <div className="text-brand-primary-700 font-bold text-lg mb-4 mt-auto">
+        <div className="text-brand-primary-700 font-bold text-base md:text-lg mb-4 mt-auto">
           ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
         </div>
 

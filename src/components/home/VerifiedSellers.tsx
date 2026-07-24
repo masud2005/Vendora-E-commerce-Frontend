@@ -42,10 +42,10 @@ export default function VerifiedSellers() {
               className="w-12 h-12 rounded-lg border border-gray-100 object-cover mr-4 shadow-sm"
             />
             <div className="flex-1">
-              <h4 className="text-gray-900 font-medium text-sm mb-0.5 group-hover:text-brand-primary-600 transition-colors">
+              <h4 className="text-gray-900 font-medium text-sm md:text-base mb-0.5 group-hover:text-brand-primary-600 transition-colors">
                 {seller.name}
               </h4>
-              <p className="text-gray-500 text-xs">{seller.stats}</p>
+              <p className="text-gray-500 text-xs md:text-sm">{seller.stats}</p>
             </div>
             <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-brand-primary-600 transition-colors" />
           </Link>
@@ -54,11 +54,11 @@ export default function VerifiedSellers() {
 
       {/* Promotional Banner */}
       <div className="mt-auto bg-[#F0F6FC] rounded-lg p-5">
-        <h4 className="text-[#185FA5] font-semibold mb-2">Sell on Vendora</h4>
-        <p className="text-gray-700 text-sm mb-4">Start your global business today</p>
+        <h4 className="text-[#185FA5] font-semibold text-base md:text-lg mb-2">Sell on Vendora</h4>
+        <p className="text-gray-700 text-sm md:text-base mb-4">Start your global business today</p>
         <Link
           href="/seller/register"
-          className="inline-block bg-[#185FA5] hover:bg-[#134D86] text-white text-xs font-semibold px-5 py-2.5 rounded transition-colors"
+          className="inline-block bg-[#185FA5] hover:bg-[#134D86] text-white text-sm md:text-base font-semibold px-5 py-2.5 rounded transition-colors"
         >
           Register as Seller
         </Link>
