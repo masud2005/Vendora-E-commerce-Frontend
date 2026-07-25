@@ -44,7 +44,7 @@ export default function AboutValues() {
         {values.map((value) => (
           <div
             key={value.title}
-            className="bg-white rounded-xl border border-gray-200 p-8 sm:p-10 text-center shadow-xs flex flex-col items-center group hover:shadow-md transition-all duration-300"
+            className="bg-white rounded-lg border border-gray-200 p-8 sm:p-10 text-center shadow-xs flex flex-col items-center group hover:shadow-md transition-all duration-300"
           >
             {/* Rounded Square Icon Badge */}
             <div

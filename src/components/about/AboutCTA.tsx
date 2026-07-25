@@ -2,7 +2,7 @@
 
 export default function AboutCTA() {
   return (
-    <div className="w-full bg-brand-primary-800 rounded-2xl py-12 px-6 sm:py-16 sm:px-10 text-center relative overflow-hidden shadow-md group">
+    <div className="w-full bg-brand-primary-800 rounded-lg py-12 px-6 sm:py-16 sm:px-10 text-center relative overflow-hidden shadow-md group">
       {/* Decorative vector overlays */}
       <div className="absolute size-64 rounded-full bg-white/5 -top-20 -left-20 transition-transform duration-700 group-hover:scale-105" />
       <div className="absolute size-64 rounded-full bg-white/5 -bottom-20 -right-20" />
