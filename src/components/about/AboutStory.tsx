@@ -6,7 +6,7 @@ export default function AboutStory() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch mb-12 sm:mb-16">
       {/* Left Card: Our Story */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm flex flex-col justify-center">
+      <div className="bg-white rounded-lg border border-gray-200 p-6 sm:p-8 shadow-sm flex flex-col justify-center">
         <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-4">
           Our Story
         </h3>
@@ -19,13 +19,13 @@ export default function AboutStory() {
       </div>
 
       {/* Right Card: Our Mission */}
-      <div className="bg-brand-primary-800 rounded-2xl p-6 sm:p-8 shadow-md text-white flex flex-col justify-center relative overflow-hidden group">
+      <div className="bg-brand-primary-800 rounded-lg p-4 lg:p-6 sm:p-8 shadow-md text-white flex flex-col justify-center relative overflow-hidden group">
         {/* Subtle decorative background circles */}
         <div className="absolute size-40 rounded-full bg-white/5 -top-10 -right-10 transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute size-24 rounded-full bg-white/5 -bottom-8 -left-8" />
         
         <div className="relative z-10">
-          <div className="size-12 rounded-lg bg-white/10 flex items-center justify-center text-brand-accent-100">
+          <div className=" size-10 lg:size-12 rounded-lg bg-white/10 flex items-center justify-center text-brand-accent-100">
             <Rocket className="size-6 animate-pulse" />
           </div>
           <h3 className="text-xl sm:text-2xl font-black text-white mb-4 mt-3.5">
