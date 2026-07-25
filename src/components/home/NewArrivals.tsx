@@ -36,7 +36,7 @@ const newArrivalProducts = [
 
 export default function NewArrivals() {
   return (
-    <section className="py-12 md:py-16 bg-[#F4F5F7]">
+    <section className="py-12 md:py-16 bg-[#f4f6f8]">
       <div className="container mx-auto px-4">
 
         {/* Header */}

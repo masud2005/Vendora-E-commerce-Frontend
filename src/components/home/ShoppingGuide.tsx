@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ShoppingGuide() {
@@ -28,12 +29,12 @@ export default function ShoppingGuide() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-medium text-gray-900 tracking-tight">Shopping Guide & News</h2>
-          <Link href="#" className="text-blue-700 hover:text-blue-800 font-semibold text-sm">
-            View Blog
+          <Link href="#" className="text-brand-primary-600 hover:text-brand-primary-800 font-semibold text-sm md:text-base flex items-center ">
+            View Blog <ChevronRight className="w-4 h-4 ml-0.5" />
           </Link>
         </div>
 
@@ -47,11 +48,11 @@ export default function ShoppingGuide() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full shadow-sm">
-                  <span className="text-[10px] font-bold text-blue-900 tracking-wide uppercase">{article.tag}</span>
+                  <span className="text-xs font-bold text-brand-primary-600 tracking-wide uppercase">{article.tag}</span>
                 </div>
               </div>
               <p className="text-xs text-gray-500 mb-2 font-medium">{article.date}</p>
-              <h3 className="font-semibold text-gray-900 text-base md:text-lg leading-snug group-hover:text-blue-700 transition-colors line-clamp-2">
+              <h3 className="font-semibold text-gray-900 text-base md:text-lg leading-snug group-hover:text-brand-primary-600 transition-colors line-clamp-2">
                 {article.title}
               </h3>
             </Link>

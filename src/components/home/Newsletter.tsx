@@ -8,7 +8,7 @@ export default function Newsletter() {
       <div className="max-w-2xl mx-auto px-4">
         <div className="mx-auto text-center flex flex-col items-center">
           <div className="w-16 h-16 bg-white rounded flex items-center justify-center mb-6 shadow-sm border border-gray-100">
-            <Mail className="w-8 h-8 text-[#0a4d95]" />
+            <Mail className="w-8 h-8 text-brand-primary-600" />
           </div>
           <h2 className="text-2xl md:text-3xl font-medium text-gray-900 tracking-tight mb-4">
             Stay Informed, Shop Smarter
@@ -17,7 +17,7 @@ export default function Newsletter() {
             Subscribe to our newsletter to receive updates on new arrivals, exclusive discounts, and personalized recommendations.
           </p>
 
-          <form className="w-full md:w-[500px] flex items-center bg-white rounded p-1 sm:p-1.5 shadow-sm border border-gray-200" onSubmit={(e) => e.preventDefault()}>
+          <form className="w-full md:w-125 flex items-center bg-white rounded p-1 sm:p-1.5 shadow-sm border border-gray-200" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder="Enter your email address"
@@ -26,7 +26,7 @@ export default function Newsletter() {
             />
             <button
               type="submit"
-              className="bg-brand-primary-600 hover:bg-brand-primary-800 text-white px-4 sm:px-8 py-2 sm:py-2.5 rounded text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0"
+              className="bg-brand-primary-600 hover:bg-brand-primary-800 text-white px-4 sm:px-8 py-2 sm:py-2.5 rounded text-sm font-medium transition-colors whitespace-nowrap shrink-0"
             >
               Subscribe
             </button>
