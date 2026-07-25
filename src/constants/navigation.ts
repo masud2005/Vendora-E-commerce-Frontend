@@ -18,28 +18,22 @@ export const MEGA_MENU_CATEGORIES = [
   {
     title: 'Electronics',
     links: [
-      { label: 'Mobile & Tablets', href: '/category/electronics/mobile' },
-      { label: 'Laptops & Computers', href: '/category/electronics/laptops' },
-      { label: 'Home Appliances', href: '/category/electronics/home-appliances' },
-      { label: 'Audio & Gadgets', href: '/category/electronics/audio' },
+      { label: 'Mobile & Tablets', href: '/shops?category=Smartphones', value: 'Smartphones' },
+      { label: 'Laptops & Computers', href: '/shops?category=Laptops', value: 'Laptops' },
+      { label: 'Audio & Gadgets', href: '/shops?category=Audio', value: 'Audio' },
     ],
   },
   {
     title: 'Fashion',
     links: [
-      { label: "Men's Apparel", href: '/category/fashion/mens' },
-      { label: "Women's Fashion", href: '/category/fashion/womens' },
-      { label: 'Kids & Infants', href: '/category/fashion/kids' },
-      { label: 'Watches & Accessories', href: '/category/fashion/watches' },
+      { label: "Men's Apparel", href: '/shops?category=Mens', value: 'Mens' },
+      { label: "Women's Fashion", href: '/shops?category=Womens', value: 'Womens' },
     ],
   },
   {
     title: 'Home & Kitchen',
     links: [
-      { label: 'Furniture', href: '/category/home/furniture' },
-      { label: 'Decor & Lighting', href: '/category/home/decor' },
-      { label: 'Tools & Hardware', href: '/category/home/tools' },
-      { label: 'Garden Supplies', href: '/category/home/garden' },
+      { label: 'Home & Living', href: '/shops?category=Home', value: 'Home' },
     ],
   },
 ];
