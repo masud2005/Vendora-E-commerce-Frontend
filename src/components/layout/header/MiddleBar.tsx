@@ -30,7 +30,7 @@ export default function MiddleBar() {
 
         {/* Search Bar */}
         <div className="col-span-3 lg:col-span-1 flex-1 w-full max-w-3xl flex order-last lg:order-0 relative">
-          <div className="flex w-full bg-white rounded-md shadow-sm border border-transparent focus-within:border-brand-primary-400 transition-colors">
+          <div className="flex w-full bg-white rounded shadow-sm border border-transparent focus-within:border-brand-primary-400 transition-colors">
             {/* Category Selector */}
             <div className="relative flex shrink-0">
               <button
@@ -83,7 +83,7 @@ export default function MiddleBar() {
               className="flex-1 px-3 sm:px-4 py-2.5 text-sm lg:text-base text-gray-800 placeholder-gray-400 focus:outline-none min-w-0"
             />
 
-            <button className="bg-brand-accent-200 hover:bg-brand-accent-400 transition-colors text-gray-900 font-semibold px-3 sm:px-4 lg:px-6 flex items-center justify-center shrink-0 rounded-r-md focus:outline-none">
+            <button className="bg-brand-accent-200 hover:bg-brand-accent-400 transition-colors text-gray-900 font-semibold px-3 sm:px-4 lg:px-6 flex items-center justify-center shrink-0 rounded-r focus:outline-none">
               <Search className="w-4 h-4 sm:w-5 sm:h-5 lg:mr-2" />
               <span className="hidden lg:inline">Search</span>
             </button>

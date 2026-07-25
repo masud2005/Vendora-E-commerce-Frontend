@@ -8,6 +8,9 @@ import NewArrivals from '@/components/home/NewArrivals';
 import FeaturedSellers from '@/components/home/FeaturedSellers';
 import PromoBanners from '@/components/home/PromoBanners';
 import RecentlyViewed from '@/components/home/RecentlyViewed';
+import Testimonials from '@/components/home/Testimonials';
+import ShoppingGuide from '@/components/home/ShoppingGuide';
+import Newsletter from '@/components/home/Newsletter';
 
 export default function Home() {
   return (
@@ -22,6 +25,9 @@ export default function Home() {
       <FeaturedSellers />
       <PromoBanners />
       <RecentlyViewed />
+      <Testimonials />
+      <ShoppingGuide />
+      <Newsletter />
     </div>
   );
 }

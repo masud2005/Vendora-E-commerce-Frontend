@@ -15,7 +15,7 @@ export default function PromoBanners() {
               <div className="pt-4 lg:pt-6 mt-auto">
                 <Link
                   href="/category/tech"
-                  className="inline-block px-5 py-2 lg:px-6 lg:py-2.5 bg-[#185FA5] text-white font-semibold rounded-lg hover:bg-[#134D86] transition-colors shadow-sm text-sm sm:text-base"
+                  className="inline-block px-5 py-2 lg:px-6 lg:py-2.5 bg-[#185FA5] text-white font-semibold rounded hover:bg-[#134D86] transition-colors shadow-sm text-sm sm:text-base"
                 >
                   Shop Tech
                 </Link>
@@ -41,7 +41,7 @@ export default function PromoBanners() {
               <div className="pt-4 lg:pt-6 mt-auto">
                 <Link
                   href="/category/fashion"
-                  className="inline-block px-5 py-2 lg:px-6 lg:py-2.5 bg-[#F59E0B] text-white font-semibold rounded-lg hover:bg-[#D97706] transition-colors shadow-sm text-sm sm:text-base"
+                  className="inline-block px-5 py-2 lg:px-6 lg:py-2.5 bg-[#F59E0B] text-white font-semibold rounded hover:bg-[#D97706] transition-colors shadow-sm text-sm sm:text-base"
                 >
                   Explore Styles
                 </Link>

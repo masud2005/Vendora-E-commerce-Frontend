@@ -77,13 +77,13 @@ export default function HeroSlider() {
                   <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                     <Link
                       href={slide.button1Link}
-                      className="bg-brand-primary-600 hover:bg-brand-primary-800 text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-lg transition-colors shadow-sm text-sm sm:text-base"
+                      className="bg-brand-primary-600 hover:bg-brand-primary-800 text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded transition-colors shadow-sm text-sm sm:text-base"
                     >
                       {slide.button1Text}
                     </Link>
                     <Link
                       href={slide.button2Link}
-                      className="bg-transparent border-2 border-brand-primary-600 text-brand-primary-600 hover:bg-brand-primary-50 font-semibold py-2 sm:py-2.5 px-6 sm:px-8 rounded-lg transition-colors text-sm sm:text-base"
+                      className="bg-transparent border-2 border-brand-primary-600 text-brand-primary-600 hover:bg-brand-primary-50 font-semibold py-2 sm:py-2.5 px-6 sm:px-8 rounded transition-colors text-sm sm:text-base"
                     >
                       {slide.button2Text}
                     </Link>
