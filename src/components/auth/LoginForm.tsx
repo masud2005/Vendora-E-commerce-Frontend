@@ -56,17 +56,16 @@ export default function LoginForm() {
 
       {/* Form */}
       <form onSubmit={handleSubmit} className="mt-4 lg:mt-6 flex flex-col gap-3 lg:gap-4">
-        
+
         {/* Email Field */}
         <div>
           <label className="block text-xs sm:text-sm font-bold text-gray-700 mb-1 select-none">
             Email or Phone Number
           </label>
-          <div className={`relative flex items-center border rounded px-3 transition-all focus-within:ring-2 ${
-            emailError 
-              ? "border-brand-semantic-400 focus-within:border-brand-semantic-400 focus-within:ring-brand-semantic-50/50" 
-              : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white focus-within:ring-brand-primary-100"
-          }`}>
+          <div className={`relative flex items-center border rounded px-3 transition-all ${emailError
+              ? "border-brand-semantic-400"
+              : "border-gray-200  focus-within:bg-white"
+            }`}>
             <Mail className="size-4 text-gray-400 mr-2 shrink-0" />
             <input
               type="text"
@@ -99,11 +98,10 @@ export default function LoginForm() {
               Forgot Password?
             </a>
           </div>
-          <div className={`relative flex items-center border rounded px-3 transition-all focus-within:ring-2 ${
-            passwordError 
-              ? "border-brand-semantic-400 focus-within:border-brand-semantic-400 focus-within:ring-brand-semantic-50/50" 
-              : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white focus-within:ring-brand-primary-100"
-          }`}>
+          <div className={`relative flex items-center border rounded px-3 transition-all ${passwordError
+              ? "border-brand-semantic-400 "
+              : "border-gray-200  focus-within:bg-white"
+            }`}>
             <Lock className="size-4 text-gray-400 mr-2 shrink-0" />
             <input
               type={showPassword ? "text" : "password"}
