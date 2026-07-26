@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-F9FAFB! overflow-x-hidden">
+        <Toaster position="top-center" reverseOrder={false} />
         <Header />
         <main className="flex-1">
           {children}

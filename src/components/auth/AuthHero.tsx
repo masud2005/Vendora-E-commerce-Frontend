@@ -2,7 +2,7 @@
 
 export default function AuthHero() {
   return (
-    <div className="relative rounded-lg overflow-hidden border border-gray-150 bg-white shadow-xs sm:w-72 lg:w-96 sm:h-120 lg:h-150">
+    <div className="relative rounded overflow-hidden border border-gray-150 bg-white shadow-xs sm:w-72 lg:w-96 sm:h-120 lg:h-150">
       {/* Real Image to prevent background zoom/crop */}
       <img
         src="/images/login-bg.png"

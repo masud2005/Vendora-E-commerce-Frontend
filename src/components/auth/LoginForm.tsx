@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Lock, Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { toast } from "react-hot-toast";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -10,13 +11,11 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setEmailError("");
     setPasswordError("");
-    setSuccess(false);
 
     let hasError = false;
 
@@ -37,7 +36,9 @@ export default function LoginForm() {
     // Simulate API Login request
     setTimeout(() => {
       setLoading(false);
-      setSuccess(true);
+      toast.success("Success! Signing in to your dashboard...");
+      setEmail("");
+      setPassword("");
     }, 1200);
   };
 
@@ -134,12 +135,6 @@ export default function LoginForm() {
           )}
         </div>
 
-        {/* Feedback alerts */}
-        {success && (
-          <div className="p-2.5 bg-brand-secondary-50 border border-brand-secondary-200 text-brand-secondary-800 rounded text-xs font-bold leading-relaxed">
-            Success! Signing in to your dashboard...
-          </div>
-        )}
 
         {/* Login Button */}
         <button
@@ -203,7 +198,7 @@ export default function LoginForm() {
       <p className="text-center text-xs sm:text-sm text-gray-500 font-medium mt-3 lg:mt-4">
         Don't have an account?{" "}
         <a
-          href="/seller/register"
+          href="/register"
           className="text-brand-primary-600 font-bold hover:underline transition-colors"
         >
           Register Now
