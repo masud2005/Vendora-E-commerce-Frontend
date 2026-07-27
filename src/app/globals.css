@@ -179,3 +179,8 @@
     @apply font-sans;
   }
 }
+
+/* Fallback system font stack for Bengali Taka symbol to prevent [NO GLYPH] */
+.font-bengali {
+  font-family: 'Arial', 'Segoe UI', 'Tahoma', sans-serif !important;
+}

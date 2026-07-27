@@ -16,8 +16,8 @@ export default function BalanceCard() {
             Current Balance
           </span>
           <div className="flex items-center gap-2 mt-1">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-none">
-              ৳ 24,580.00
+            <span className="text-lg sm:text-xl md:text-xl font-black tracking-tight leading-none">
+              <span className="font-bengali">৳</span> 24,580.00
             </span>
             <span className="inline-flex items-center gap-1 bg-white/10 border border-white/20 text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded text-blue-200">
               <ShieldCheck className="size-3 text-emerald-400" />
@@ -25,14 +25,14 @@ export default function BalanceCard() {
             </span>
           </div>
         </div>
-
+ 
         {/* Muted rewards list */}
         <div className="flex items-center gap-6 border-t border-white/10 pt-4">
           <div>
             <span className="text-[10px] md:text-xs font-bold text-blue-300/80 uppercase block">
               Reward Points
             </span>
-            <span className="text-sm md:text-base font-bold mt-0.5 block">
+            <span className="text-sm  font-bold mt-0.5 block">
               1,240 Pts
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function BalanceCard() {
               Active Refunds
             </span>
             <span className="text-sm md:text-base font-bold mt-0.5 block">
-              ৳ 0.00
+              <span className="font-bengali">৳</span> 0.00
             </span>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function TransactionHistory() {
       typeColor: "bg-blue-50 text-blue-600",
       status: "Completed",
       statusColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      amount: "- ৳ 1,250.00",
+      amount: "1,250.00",
       isDebit: true
     },
     {
@@ -23,7 +23,7 @@ export default function TransactionHistory() {
       typeColor: "bg-emerald-50 text-emerald-600",
       status: "Completed",
       statusColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      amount: "+ ৳ 5,000.00",
+      amount: "5,000.00",
       isDebit: false
     },
     {
@@ -34,7 +34,7 @@ export default function TransactionHistory() {
       typeColor: "bg-amber-50 text-amber-600",
       status: "Completed",
       statusColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      amount: "+ ৳ 450.00",
+      amount: "450.00",
       isDebit: false
     },
     {
@@ -45,7 +45,7 @@ export default function TransactionHistory() {
       typeColor: "bg-blue-50 text-blue-600",
       status: "Completed",
       statusColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
-      amount: "- ৳ 2,100.00",
+      amount: "2,100.00",
       isDebit: true
     }
   ];
@@ -66,14 +66,14 @@ export default function TransactionHistory() {
 
       {/* Responsive Table Wrapper */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs md:text-sm">
+        <table className="w-full text-left border-collapse text-xs md:text-sm lg:text-xs xl:text-sm">
           <thead>
-            <tr className="bg-gray-50 border-b border-gray-150 text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider">
-              <th className="py-3.5 px-5">Transaction ID</th>
-              <th className="py-3.5 px-5">Date</th>
-              <th className="py-3.5 px-5">Type</th>
-              <th className="py-3.5 px-5">Status</th>
-              <th className="py-3.5 px-5 text-right">Amount</th>
+            <tr className="bg-gray-50 border-b border-gray-150 text-[10px] md:text-xs lg:text-[10px] xl:text-xs font-bold text-gray-400 uppercase tracking-wider">
+              <th className="py-3.5 px-3 md:px-5 lg:px-3">Transaction ID</th>
+              <th className="py-3.5 px-3 md:px-5 lg:px-3">Date</th>
+              <th className="py-3.5 px-3 md:px-5 lg:px-3">Type</th>
+              <th className="py-3.5 px-3 md:px-5 lg:px-3">Status</th>
+              <th className="py-3.5 px-3 md:px-5 lg:px-3 text-right">Amount</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 font-semibold text-gray-700">
@@ -83,17 +83,17 @@ export default function TransactionHistory() {
                 <tr key={idx} className="hover:bg-gray-50/30 transition-colors">
                   
                   {/* Transaction ID */}
-                  <td className="py-3.5 px-5 font-bold text-[#0F4C81]">
+                  <td className="py-3.5 px-3 md:px-5 lg:px-3 font-bold text-[#0F4C81]">
                     {tx.id}
                   </td>
                   
                   {/* Placed Date */}
-                  <td className="py-3.5 px-5 text-gray-500 font-medium">
+                  <td className="py-3.5 px-3 md:px-5 lg:px-3 text-gray-500 font-medium">
                     {tx.date}
                   </td>
 
                   {/* Transaction Type Label */}
-                  <td className="py-3.5 px-5">
+                  <td className="py-3.5 px-3 md:px-5 lg:px-3">
                     <div className="flex items-center gap-2">
                       <div className={`p-1 rounded-sm ${tx.typeColor}`}>
                         <TypeIcon className="size-3.5" />
@@ -103,15 +103,15 @@ export default function TransactionHistory() {
                   </td>
 
                   {/* Status Badge */}
-                  <td className="py-3.5 px-5">
-                    <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] md:text-xs border font-bold ${tx.statusColor}`}>
+                  <td className="py-3.5 px-3 md:px-5 lg:px-3">
+                    <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] md:text-xs lg:text-[10px] xl:text-xs border font-bold ${tx.statusColor}`}>
                       {tx.status}
                     </span>
                   </td>
 
                   {/* Transaction Amount */}
-                  <td className={`py-3.5 px-5 text-right font-extrabold ${tx.isDebit ? "text-brand-semantic-600" : "text-brand-secondary-600"}`}>
-                    {tx.amount}
+                  <td className={`py-3.5 px-3 md:px-5 lg:px-3 text-right font-extrabold ${tx.isDebit ? "text-brand-semantic-600" : "text-brand-secondary-600"}`}>
+                    {tx.isDebit ? "- " : "+ "}<span className="font-bengali">৳</span> {tx.amount}
                   </td>
 
                 </tr>

@@ -4,10 +4,10 @@ import { Award, RefreshCcw, Sparkles } from "lucide-react";
 
 export default function RedeemPoints() {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-2xs space-y-5">
+    <div className="bg-white border border-gray-200 rounded-lg  shadow-2xs space-y-5 p-4 lg:p-3">
       
       {/* Widget Header */}
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 lg:gap-2">
         <div className="size-10 rounded-full bg-brand-accent-50 text-brand-accent-600 flex items-center justify-center shrink-0">
           <Award className="size-5.5 fill-brand-accent-200" />
         </div>
@@ -22,7 +22,7 @@ export default function RedeemPoints() {
       </div>
 
       {/* Points conversion details */}
-      <div className="bg-gray-50 border border-gray-150 rounded-lg p-4 space-y-3 text-xs md:text-sm font-semibold">
+      <div className="bg-gray-50 border border-gray-150 rounded-lg p-4 md:p-4 lg:p-2 space-y-3 text-xs md:text-sm font-semibold">
         <div className="flex items-center justify-between">
           <span className="text-gray-500">Available Points</span>
           <span className="text-gray-900 font-bold text-sm">1,240</span>
@@ -30,7 +30,7 @@ export default function RedeemPoints() {
         <div className="flex items-center justify-between border-t border-gray-200/60 pt-3">
           <span className="text-gray-500">Point Value</span>
           <span className="text-brand-secondary-600 font-extrabold text-sm flex items-center gap-1">
-            <span>৳ 124.00</span>
+            <span><span className="font-bengali">৳</span> 124.00</span>
           </span>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function RedeemPoints() {
 
       {/* Disclaimer disclaimer */}
       <p className="text-[10px] md:text-xs text-gray-400 font-medium text-center leading-normal italic">
-        * Minimum 500 points required to redeem. 10 points = ৳ 1.
+        * Minimum 500 points required to redeem. 10 points = <span className="font-bengali">৳</span> 1.
       </p>
 
     </div>
