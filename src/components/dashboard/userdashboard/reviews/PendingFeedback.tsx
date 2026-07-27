@@ -29,7 +29,7 @@ export default function PendingFeedback() {
         <h3 className="text-sm font-bold text-gray-900">
           Pending Feedback
         </h3>
-        <span className="text-xs  font-bold bg-brand-semantic-50 border border-brand-semantic-200 text-brand-semantic-600 px-2 py-0.5 rounded-full uppercase tracking-wider">
+        <span className="text-[10px] md:text-xs  font-bold bg-brand-semantic-50 border border-brand-semantic-200 text-brand-semantic-600 px-2 py-0.5 rounded-full uppercase tracking-wider">
           3 Items Waiting
         </span>
       </div>
@@ -52,10 +52,10 @@ export default function PendingFeedback() {
 
               {/* Title, Date & Interactive Star Rating Input */}
               <div className="space-y-1">
-                <h4 className="text-sm font-bold text-gray-900 leading-tight line-clamp-1">
+                <h4 className="text-xs md:text-sm font-bold text-gray-900 leading-tight line-clamp-1">
                   {item.name}
                 </h4>
-                <p className="text-xs font-semibold text-gray-400">
+                <p className="text-[10px] md:text-xs font-semibold text-gray-400">
                   {item.date}
                 </p>
                 <div className="pt-0.5">
