@@ -1,14 +1,14 @@
 "use client";
 
-import ReviewsHeader from "@/components/dashboard/(userdashboard)/reviews/ReviewsHeader";
-import OverallRating from "@/components/dashboard/(userdashboard)/reviews/OverallRating";
-import PendingFeedback from "@/components/dashboard/(userdashboard)/reviews/PendingFeedback";
-import ReviewHistory from "@/components/dashboard/(userdashboard)/reviews/ReviewHistory";
+import ReviewsHeader from "@/components/dashboard/userdashboard/reviews/ReviewsHeader";
+import OverallRating from "@/components/dashboard/userdashboard/reviews/OverallRating";
+import PendingFeedback from "@/components/dashboard/userdashboard/reviews/PendingFeedback";
+import ReviewHistory from "@/components/dashboard/userdashboard/reviews/ReviewHistory";
 import { Plus } from "lucide-react";
 
 export default function ReviewsPage() {
   return (
-    <div className="space-y-8 select-none relative pb-16">
+    <div className="space-y-8 select-none relative ">
       {/* 1. Page Header */}
       <ReviewsHeader />
 

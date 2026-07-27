@@ -26,8 +26,8 @@ export default function OverallRating() {
             4.8
           </span>
           <div className="space-y-1.5">
-            <Rating value={5} readonly size={4.5} />
-            <span className="text-[11px] lg:text-sm font-semibold text-gray-400 block">
+            <Rating value={5} readonly size={4} />
+            <span className="text-[11px] lg:text-xs xl:text-sm font-semibold text-gray-400 block">
               Based on 124 reviews
             </span>
           </div>

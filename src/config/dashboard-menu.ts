@@ -24,12 +24,12 @@ export interface MenuItem {
 export const roleMenuConfigs: Record<string, MenuItem[]> = {
   // ১. Customer/User এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু সেটআপ:
   user: [
-    { title: "Dashboard", href: "/user", icon: LayoutDashboard },
-    { title: "Orders", href: "/user/orders", icon: ClipboardList },
-    { title: "Wallet", href: "/user/wallet", icon: Wallet },
-    { title: "Reviews", href: "/user/reviews", icon: MessageSquare },
-    { title: "Notifications", href: "/user/notifications", icon: Bell },
-    { title: "Settings", href: "/user/settings", icon: Settings }
+    { title: "Overview", href: "/dashboard/overview", icon: LayoutDashboard },
+    { title: "Orders", href: "/dashboard/orders", icon: ClipboardList },
+    { title: "Wallet", href: "/dashboard/wallet", icon: Wallet },
+    { title: "Reviews", href: "/dashboard/reviews", icon: MessageSquare },
+    { title: "Notifications", href: "/dashboard/notifications", icon: Bell },
+    { title: "Settings", href: "/dashboard/settings", icon: Settings }
   ],
   
   // ২. Seller/Merchant এর জন্য ডেমো মেনু:

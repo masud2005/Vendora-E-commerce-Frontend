@@ -33,7 +33,11 @@ export default function DashboardLayout({
   const handleRoleChange = (newRole: "user" | "seller" | "admin" | "rider") => {
     setRole(newRole);
     setMobileOpen(false);
-    router.push(`/${newRole}`);
+    if (newRole === "user") {
+      router.push("/dashboard/overview");
+    } else {
+      router.push(`/${newRole}`);
+    }
   };
 
   return (

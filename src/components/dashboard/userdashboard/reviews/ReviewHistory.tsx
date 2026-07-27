@@ -61,7 +61,7 @@ export default function ReviewHistory() {
       </div>
 
       {/* Grid of history cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-4">
         {reviews.map((review, idx) => (
           <div
             key={idx}
@@ -81,7 +81,7 @@ export default function ReviewHistory() {
 
               {/* Title, rating and reviewed date */}
               <div className="space-y-1">
-                <h4 className="text-sm md:text-base font-bold text-gray-900 leading-snug">
+                <h4 className="text-xs md:text-sm font-bold text-gray-900 leading-snug">
                   {review.name}
                 </h4>
                 <div className="flex items-center gap-2 text-[11px] md:text-xs font-semibold text-gray-400">
@@ -99,7 +99,7 @@ export default function ReviewHistory() {
             {/* Footer interaction buttons */}
             <div className="flex items-center justify-between border-t border-gray-100 pt-3 text-[11px] md:text-xs font-bold">
               <button className="text-brand-primary-600 hover:text-brand-primary-800 transition-colors inline-flex items-center gap-1.5 cursor-pointer">
-                <ThumbsUp className="size-3.5 stroke-[2.2]" />
+                <ThumbsUp className="size-3 stroke-[2.2]" />
                 <span>{review.helpful} people found this helpful</span>
               </button>
 
