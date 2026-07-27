@@ -22,7 +22,7 @@ export default function Sidebar({ userRole }: SidebarProps) {
   const profile = roleProfiles[userRole] || { name: "Guest User", type: "Public Account", bg: "bg-gray-400" };
 
   return (
-    <aside className="w-64 bg-[#F8FAFC] border-r border-gray-200 flex flex-col h-full select-none shrink-0">
+    <aside className="w-64 bg-transparent flex flex-col select-none shrink-0">
       
       {/* Brand Header matching user's mockup */}
       <div className="pt-8 pb-6 px-6 flex flex-col">

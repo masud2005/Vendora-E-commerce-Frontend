@@ -37,37 +37,39 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="h-screen flex overflow-hidden bg-gray-50 font-sans">
-      
-      {/* Desktop Sidebar (hidden on mobile, visible from sm screen) */}
-      <div className="hidden sm:block h-full">
-        <Sidebar userRole={role} />
-      </div>
-
-      {/* Mobile Drawer Sidebar using shadcn Sheet component */}
-      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-        <SheetContent side="left" showCloseButton={true} className="p-0 w-64 bg-[#F8FAFC] border-r border-gray-200">
+    <div className="container mx-auto px-4 py-8 font-sans">
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        
+        {/* Desktop Sidebar (hidden on mobile, visible from lg screen) */}
+        <div className="hidden lg:block shrink-0 bg-white border border-gray-200 rounded-lg p-2 shadow-2xs">
           <Sidebar userRole={role} />
-        </SheetContent>
-      </Sheet>
+        </div>
 
-      {/* Main Content Layout Container */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden">
-        {/* Dynamic header navbar */}
-        <Navbar
-          currentRole={role}
-          onRoleChange={handleRoleChange}
-          onMobileToggle={() => setMobileOpen(true)}
-        />
+        {/* Mobile/Tablet Drawer Sidebar using shadcn Sheet component */}
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetContent side="left" showCloseButton={true} className="p-0 w-64 bg-[#F8FAFC] border-r border-gray-200">
+            <Sidebar userRole={role} />
+          </SheetContent>
+        </Sheet>
 
-        {/* Scrollable Children Body */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 scrollbar-thin">
-          <div className="max-w-7xl mx-auto h-full">
-            {children}
+        {/* Main Content Layout Container */}
+        <div className="flex-1 w-full flex flex-col gap-6">
+          {/* Dynamic header navbar */}
+          <div className="bg-white border border-gray-200 rounded-lg shadow-2xs">
+            <Navbar
+              currentRole={role}
+              onRoleChange={handleRoleChange}
+              onMobileToggle={() => setMobileOpen(true)}
+            />
           </div>
-        </main>
-      </div>
 
+          {/* Children Page Body */}
+          <main className="w-full">
+            {children}
+          </main>
+        </div>
+
+      </div>
     </div>
   );
 }

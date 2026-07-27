@@ -21,16 +21,7 @@ export default function Navbar({ currentRole, onRoleChange, onMobileToggle }: Na
           <Menu className="size-5" />
         </button>
 
-        {/* Mock Search Bar */}
-        <div className="relative hidden md:flex items-center w-64">
-          <Search className="absolute left-3 size-4 text-gray-400 pointer-events-none" />
-          <input
-            type="text"
-            placeholder="Search dashboard..."
-            className="w-full bg-gray-50/50 border border-gray-200 rounded py-1.5 pl-9 pr-3 text-xs text-gray-800 outline-none focus:border-brand-primary-600 focus:bg-white transition-all"
-            disabled
-          />
-        </div>
+       
       </div>
 
       {/* Header Actions Area (Role Switcher Simulator) */}
