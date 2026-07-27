@@ -61,7 +61,7 @@ export default function ReviewHistory() {
       </div>
 
       {/* Grid of history cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-4">
         {reviews.map((review, idx) => (
           <div
             key={idx}
@@ -69,7 +69,7 @@ export default function ReviewHistory() {
           >
             
             {/* Header info */}
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               {/* Product Thumbnail */}
               <div className="size-14 rounded overflow-hidden border border-gray-100 bg-gray-50 shrink-0">
                 <img
@@ -80,11 +80,11 @@ export default function ReviewHistory() {
               </div>
 
               {/* Title, rating and reviewed date */}
-              <div className="space-y-1">
+              <div className="">
                 <h4 className="text-xs md:text-sm font-bold text-gray-900 leading-snug">
                   {review.name}
                 </h4>
-                <div className="flex items-center gap-2 text-[11px] md:text-xs font-semibold text-gray-400">
+                <div className="flex items-center gap-1.5 text-[11px] md:text-xs font-medium text-gray-400">
                   <Rating value={review.rating} readonly size={3.5} />
                   <span>· {review.date}</span>
                 </div>
@@ -97,13 +97,13 @@ export default function ReviewHistory() {
             </p>
 
             {/* Footer interaction buttons */}
-            <div className="flex items-center justify-between border-t border-gray-100 pt-3 text-[11px] md:text-xs font-bold">
-              <button className="text-brand-primary-600 hover:text-brand-primary-800 transition-colors inline-flex items-center gap-1.5 cursor-pointer">
-                <ThumbsUp className="size-3 stroke-[2.2]" />
+            <div className="flex flex-wrap items-center justify-between border-t border-gray-100 pt-3 text-[11px] md:text-xs font-bold gap-2">
+              <button className="text-brand-primary-600 hover:text-brand-primary-800 transition-colors inline-flex items-center gap-1.5 cursor-pointer text-left leading-tight max-w-[75%]">
+                <ThumbsUp className="size-3 stroke-[2.2] shrink-0" />
                 <span>{review.helpful} people found this helpful</span>
               </button>
 
-              <div className="flex items-center gap-3 text-gray-400 font-bold">
+              <div className="flex items-center gap-3 text-gray-400 font-bold shrink-0">
                 <span className="hover:text-gray-700 cursor-pointer">Edit</span>
                 <span className="hover:text-brand-semantic-600 cursor-pointer">Delete</span>
               </div>

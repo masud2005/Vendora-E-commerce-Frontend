@@ -19,7 +19,7 @@ export default function DashboardNavContent({
       <div className="flex items-center gap-3">
         <button
           onClick={onMobileToggle}
-          className="p-1.5 hover:bg-gray-50 rounded text-gray-500 md:hidden cursor-pointer active:scale-95 transition-transform"
+          className="p-1.5 hover:bg-gray-50 rounded text-gray-500 sm:hidden cursor-pointer active:scale-95 transition-transform"
         >
           <Menu className="size-5" />
         </button>

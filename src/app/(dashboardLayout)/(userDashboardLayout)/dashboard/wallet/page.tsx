@@ -1,11 +1,11 @@
 "use client";
 
-import WalletHeader from "@/components/dashboard/userdashboard/wallet/WalletHeader";
-import BalanceCard from "@/components/dashboard/userdashboard/wallet/BalanceCard";
-import TransactionHistory from "@/components/dashboard/userdashboard/wallet/TransactionHistory";
-import RedeemPoints from "@/components/dashboard/userdashboard/wallet/RedeemPoints";
-import TopupPartners from "@/components/dashboard/userdashboard/wallet/TopupPartners";
-import PromoBanner from "@/components/dashboard/userdashboard/wallet/PromoBanner";
+import WalletHeader from "@/components/dashboard/user/wallet/WalletHeader";
+import BalanceCard from "@/components/dashboard/user/wallet/BalanceCard";
+import TransactionHistory from "@/components/dashboard/user/wallet/TransactionHistory";
+import RedeemPoints from "@/components/dashboard/user/wallet/RedeemPoints";
+import TopupPartners from "@/components/dashboard/user/wallet/TopupPartners";
+import PromoBanner from "@/components/dashboard/user/wallet/PromoBanner";
 
 export default function WalletPage() {
   return (
