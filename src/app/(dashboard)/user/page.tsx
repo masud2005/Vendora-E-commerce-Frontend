@@ -1,10 +1,10 @@
 "use client";
 
-import UserGreeting from "@/components/dashboard/user/UserGreeting";
-import UserStats from "@/components/dashboard/user/UserStats";
-import RecentOrdersTable from "@/components/dashboard/user/RecentOrdersTable";
-import WishlistSummary from "@/components/dashboard/user/WishlistSummary";
-import RecommendedProducts from "@/components/dashboard/user/RecommendedProducts";
+import UserGreeting from "@/components/dashboard/(userdashboard)/user/UserGreeting";
+import UserStats from "@/components/dashboard/(userdashboard)/user/UserStats";
+import RecentOrdersTable from "@/components/dashboard/(userdashboard)/user/RecentOrdersTable";
+import WishlistSummary from "@/components/dashboard/(userdashboard)/user/WishlistSummary";
+import RecommendedProducts from "@/components/dashboard/(userdashboard)/user/RecommendedProducts";
 
 export default function UserDashboardPage() {
   return (
