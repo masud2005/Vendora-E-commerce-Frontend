@@ -17,8 +17,6 @@ export const metadata: Metadata = {
   description: "Enterprise-ready Next.js template with best practices",
 };
 
-import Header from "@/components/layout/header/Header";
-import Footer from "@/components/layout/footer/Footer";
 import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
@@ -33,11 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-F9FAFB! overflow-x-hidden">
         <Toaster position="top-center" reverseOrder={false} />
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

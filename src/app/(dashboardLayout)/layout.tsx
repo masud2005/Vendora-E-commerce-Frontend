@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import Sidebar from "@/components/dashboard/Sidebar";
-import Navbar from "@/components/dashboard/Navbar";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import Sidebar from "@/components/modules/Dashboard/DashboardSidebar";
+import Navbar from "@/components/modules/Dashboard/DashboardNavbar";
+import MobileSidebar from "@/components/modules/Dashboard/DashboardMobileSidebar";
 
 export default function DashboardLayout({
   children
@@ -42,19 +42,19 @@ export default function DashboardLayout({
 
   return (
     <div className="container mx-auto px-4 py-8 font-sans">
-      <div className="flex flex-col lg:flex-row gap-8 items-start">
+      <div className="flex flex-col md:flex-row gap-8 items-start">
         
-        {/* Desktop Sidebar (hidden on mobile, visible from lg screen) */}
-        <div className="hidden lg:block shrink-0 bg-white border border-gray-200 rounded-lg p-2 shadow-2xs">
+        {/* Desktop/Tablet Sidebar (hidden on mobile, visible from tablet/md screen) */}
+        <div className="hidden md:block shrink-0 bg-white border border-gray-200 rounded-lg p-2 shadow-2xs">
           <Sidebar userRole={role} />
         </div>
 
-        {/* Mobile/Tablet Drawer Sidebar using shadcn Sheet component */}
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetContent side="left" showCloseButton={true} className="p-0 w-64 bg-[#F8FAFC] border-r border-gray-200">
-            <Sidebar userRole={role} />
-          </SheetContent>
-        </Sheet>
+        {/* Mobile/Tablet Drawer Sidebar */}
+        <MobileSidebar
+          open={mobileOpen}
+          onOpenChange={setMobileOpen}
+          userRole={role}
+        />
 
         {/* Main Content Layout Container */}
         <div className="flex-1 w-full flex flex-col gap-6">

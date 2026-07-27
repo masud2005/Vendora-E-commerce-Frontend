@@ -6,12 +6,12 @@ export default function TopupPartners() {
   const partners = [
     { name: "Visa", bg: "bg-gradient-to-r from-blue-700 to-blue-900", text: "text-white font-extrabold italic" },
     { name: "MasterCard", bg: "bg-gradient-to-r from-gray-800 to-black", text: "text-white font-bold" },
-    { name: "bKash", bg: "bg-gradient-to-r from-pink-600 to-pink-800", text: "text-white font-black italic text-[11px]" },
-    { name: "Nagad", bg: "bg-gradient-to-r from-orange-500 to-red-650", text: "text-white font-black italic text-[11px]" }
+    { name: "bKash", bg: "bg-gradient-to-r from-pink-600 to-pink-800", text: "text-white font-black italic " },
+    { name: "Nagad", bg: "bg-gradient-to-r from-orange-500 to-red-600", text: "text-white font-black italic " }
   ];
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-2xs space-y-6">
+    <div className="bg-white border border-gray-200 rounded-lg px-5 lg:px-3 pt-4 pb-5 shadow-2xs space-y-6">
       
       {/* Title */}
       <h3 className="text-xs md:text-sm font-bold text-gray-900 uppercase tracking-wider">
@@ -19,22 +19,22 @@ export default function TopupPartners() {
       </h3>
 
       {/* Grid Layout of Partners */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-2">
         {partners.map((partner, idx) => (
           <div
             key={idx}
-            className={`h-12 rounded border border-gray-100 flex items-center justify-center p-2 shadow-3xs cursor-pointer select-none active:scale-95 transition-transform ${partner.bg}`}
+            className={`h-10 rounded border border-gray-100 flex items-center justify-center  shadow-3xs cursor-pointer select-none active:scale-95 transition-transform ${partner.bg}`}
           >
             {partner.name === "MasterCard" ? (
               <div className="flex items-center gap-1.5">
                 <div className="flex -space-x-2">
-                  <div className="size-3.5 bg-red-500 rounded-full"></div>
-                  <div className="size-3.5 bg-amber-500 rounded-full bg-opacity-80"></div>
+                  {/* <div className="size-3.5 bg-red-500 rounded-full"></div> */}
+                  {/* <div className="size-3.5 bg-amber-500 rounded-full bg-opacity-80"></div> */}
                 </div>
-                <span className="text-[10px] font-bold text-white tracking-tight">Mastercard</span>
+                <span className="text-xs font-bold text-white tracking-tight">Mastercard</span>
               </div>
             ) : (
-              <span className={`text-xs md:text-sm tracking-wide ${partner.text}`}>
+              <span className={`text-xs  tracking-wide ${partner.text}`}>
                 {partner.name}
               </span>
             )}

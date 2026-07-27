@@ -1,32 +1,32 @@
 "use client";
 
-import { Bell, Search, Menu, RefreshCw } from "lucide-react";
+import { Bell, Menu, RefreshCw } from "lucide-react";
 
-interface NavbarProps {
+interface DashboardNavContentProps {
   currentRole: "user" | "seller" | "admin" | "rider";
   onRoleChange: (newRole: "user" | "seller" | "admin" | "rider") => void;
   onMobileToggle: () => void;
 }
 
-export default function Navbar({ currentRole, onRoleChange, onMobileToggle }: NavbarProps) {
+export default function DashboardNavContent({
+  currentRole,
+  onRoleChange,
+  onMobileToggle
+}: DashboardNavContentProps) {
   return (
-    <header className="h-16 border-b border-gray-200 bg-white flex items-center justify-between px-4 sm:px-6 select-none shrink-0 z-20">
-      
-      {/* Mobile Sidebar Toggle & Search */}
-      <div className="flex items-center gap-3 flex-1 mr-4">
+    <div className="flex items-center justify-between w-full h-full px-4 sm:px-6 select-none">
+      {/* Mobile Sidebar Toggle Button */}
+      <div className="flex items-center gap-3">
         <button
           onClick={onMobileToggle}
-          className="p-1.5 hover:bg-gray-50 rounded text-gray-500 sm:hidden cursor-pointer active:scale-95 transition-transform"
+          className="p-1.5 hover:bg-gray-50 rounded text-gray-500 md:hidden cursor-pointer active:scale-95 transition-transform"
         >
           <Menu className="size-5" />
         </button>
-
-       
       </div>
 
       {/* Header Actions Area (Role Switcher Simulator) */}
       <div className="flex items-center gap-4">
-        
         {/* Dynamic Dev Role Switcher Panel */}
         <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded px-2.5 py-1">
           <span className="text-[10px] font-black text-gray-500 uppercase tracking-wider flex items-center gap-1">
@@ -50,8 +50,7 @@ export default function Navbar({ currentRole, onRoleChange, onMobileToggle }: Na
           <Bell className="size-4.5 stroke-[2.2]" />
           <span className="absolute top-1.5 right-1.5 size-2 bg-brand-semantic-600 rounded-full ring-2 ring-white"></span>
         </button>
-
       </div>
-    </header>
+    </div>
   );
 }
