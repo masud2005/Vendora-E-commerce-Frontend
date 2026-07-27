@@ -40,7 +40,7 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
 
 
       {/* Navigation Links Area */}
-      <nav className="flex-1 overflow-y-auto px-2 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch">
+      <nav className="flex-1 overflow-y-auto px-2.5 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch w-full">
         {menuItems.map((item, idx) => {
           const isActive = pathname === item.href;
           const Icon = item.icon;

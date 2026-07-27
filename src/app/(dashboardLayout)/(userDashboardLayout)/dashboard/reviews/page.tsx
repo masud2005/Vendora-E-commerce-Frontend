@@ -1,9 +1,9 @@
 "use client";
 
-import ReviewsHeader from "@/components/dashboard/userdashboard/reviews/ReviewsHeader";
-import OverallRating from "@/components/dashboard/userdashboard/reviews/OverallRating";
-import PendingFeedback from "@/components/dashboard/userdashboard/reviews/PendingFeedback";
-import ReviewHistory from "@/components/dashboard/userdashboard/reviews/ReviewHistory";
+import ReviewsHeader from "@/components/dashboard/user/reviews/ReviewsHeader";
+import OverallRating from "@/components/dashboard/user/reviews/OverallRating";
+import PendingFeedback from "@/components/dashboard/user/reviews/PendingFeedback";
+import ReviewHistory from "@/components/dashboard/user/reviews/ReviewHistory";
 import { Plus } from "lucide-react";
 
 export default function ReviewsPage() {

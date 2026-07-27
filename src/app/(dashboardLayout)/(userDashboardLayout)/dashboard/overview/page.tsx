@@ -1,10 +1,10 @@
 "use client";
 
-import RecentOrdersTable from "@/components/dashboard/userdashboard/overview/RecentOrdersTable";
-import RecommendedProducts from "@/components/dashboard/userdashboard/overview/RecommendedProducts";
-import UserGreeting from "@/components/dashboard/userdashboard/overview/UserGreeting";
-import UserStats from "@/components/dashboard/userdashboard/overview/UserStats";
-import WishlistSummary from "@/components/dashboard/userdashboard/overview/WishlistSummary";
+import RecentOrdersTable from "@/components/dashboard/user/overview/RecentOrdersTable";
+import RecommendedProducts from "@/components/dashboard/user/overview/RecommendedProducts";
+import UserGreeting from "@/components/dashboard/user/overview/UserGreeting";
+import UserStats from "@/components/dashboard/user/overview/UserStats";
+import WishlistSummary from "@/components/dashboard/user/overview/WishlistSummary";
 
 
 

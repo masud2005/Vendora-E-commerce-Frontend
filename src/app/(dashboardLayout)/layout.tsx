@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Sidebar from "@/components/modules/Dashboard/DashboardSidebar";
 import Navbar from "@/components/modules/Dashboard/DashboardNavbar";
-import MobileSidebar from "@/components/modules/Dashboard/DashboardMobileSidebar";
+
+import DashboardMobileSidebar from "@/components/modules/Dashboard/DashboardMobileSidebar";
 
 export default function DashboardLayout({
   children
@@ -41,39 +42,35 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 font-sans">
-      <div className="flex flex-col md:flex-row gap-8 items-start">
-        
-        {/* Desktop/Tablet Sidebar (hidden on mobile, visible from tablet/md screen) */}
-        <div className="hidden md:block shrink-0 bg-white border border-gray-200 rounded-lg p-2 shadow-2xs">
-          <Sidebar userRole={role} />
-        </div>
+    <div className="flex flex-col sm:flex-row h-screen w-full bg-gray-50/50 font-sans overflow-hidden">
+      
+      {/* Desktop/Tablet Sidebar (left-anchored, full-height, stationary) */}
+      <div className="hidden sm:block shrink-0 bg-white border-r border-gray-200 w-30 lg:w-64 h-full transition-all duration-300">
+        <Sidebar userRole={role} />
+      </div>
 
-        {/* Mobile/Tablet Drawer Sidebar */}
-        <MobileSidebar
-          open={mobileOpen}
-          onOpenChange={setMobileOpen}
-          userRole={role}
+      {/* Mobile/Tablet Drawer Sidebar */}
+      <DashboardMobileSidebar
+        open={mobileOpen}
+        onOpenChange={setMobileOpen}
+        userRole={role}
+      />
+
+      {/* Main Content Layout Container */}
+      <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+        {/* Dynamic header navbar */}
+        <Navbar
+          currentRole={role}
+          onRoleChange={handleRoleChange}
+          onMobileToggle={() => setMobileOpen(true)}
         />
 
-        {/* Main Content Layout Container */}
-        <div className="flex-1 w-full flex flex-col gap-6">
-          {/* Dynamic header navbar */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-2xs">
-            <Navbar
-              currentRole={role}
-              onRoleChange={handleRoleChange}
-              onMobileToggle={() => setMobileOpen(true)}
-            />
-          </div>
-
-          {/* Children Page Body */}
-          <main className="w-full">
-            {children}
-          </main>
-        </div>
-
+        {/* Children Page Body (Only this area scrolls) */}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          {children}
+        </main>
       </div>
+
     </div>
   );
 }
