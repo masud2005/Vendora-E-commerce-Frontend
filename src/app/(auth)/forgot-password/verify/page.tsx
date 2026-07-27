@@ -1,6 +1,6 @@
 "use client";
 
-import ForgotPasswordVerifyHero from "@/components/auth/ForgotPasswordVerifyHero";
+import ForgotPasswordVerifyHero from "@/components/auth/VerifyHero";
 import ForgotPasswordVerifyForm from "@/components/auth/VerifyForm";
 
 export default function ForgotPasswordVerifyPage() {

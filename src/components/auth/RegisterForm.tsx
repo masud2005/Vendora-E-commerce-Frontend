@@ -98,8 +98,8 @@ export default function RegisterForm() {
             Full Name
           </label>
           <div className={`relative flex items-center border rounded px-3 transition-all ${nameError
-              ? "border-brand-semantic-400 focus-within:border-brand-semantic-400"
-              : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white"
+              ? "border-brand-semantic-400"
+              : "border-gray-200 focus-within:bg-white"
             }`}>
             <User className="size-3.5 lg:size-4 text-gray-400 mr-2 shrink-0" />
             <input
@@ -126,8 +126,8 @@ export default function RegisterForm() {
             Email or Phone Number
           </label>
           <div className={`relative flex items-center border rounded px-3 transition-all ${emailError
-              ? "border-brand-semantic-400 focus-within:border-brand-semantic-400"
-              : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white"
+              ? "border-brand-semantic-400 "
+              : "border-gray-200  focus-within:bg-white"
             }`}>
             <Mail className="size-3.5 lg:size-4 text-gray-400 mr-2 shrink-0" />
             <input
@@ -156,8 +156,8 @@ export default function RegisterForm() {
               Password
             </label>
             <div className={`relative flex items-center border rounded px-3 transition-all ${passwordError
-                ? "border-brand-semantic-400 focus-within:border-brand-semantic-400"
-                : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white"
+                ? "border-brand-semantic-400 "
+                : "border-gray-200  focus-within:bg-white"
               }`}>
               <Lock className="size-3.5 lg:size-4 text-gray-400 mr-2 shrink-0" />
               <input
@@ -191,8 +191,8 @@ export default function RegisterForm() {
               Confirm Password
             </label>
             <div className={`relative flex items-center border rounded px-3 transition-all ${confirmPasswordError
-                ? "border-brand-semantic-400 focus-within:border-brand-semantic-400"
-                : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white"
+                ? "border-brand-semantic-400 "
+                : "border-gray-200 focus-within:bg-white"
               }`}>
               <Lock className="size-3.5 lg:size-4 text-gray-400 mr-2 shrink-0" />
               <input
