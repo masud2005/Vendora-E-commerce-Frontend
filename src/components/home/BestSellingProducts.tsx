@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ProductCard from '../shared/ProductCard';
 
 
 const bestSellingProducts = [
