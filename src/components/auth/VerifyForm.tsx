@@ -86,7 +86,7 @@ export default function ForgotPasswordVerifyForm() {
       setLoading(false);
       toast.success("Code verified successfully!");
       // Redirect to the Reset Password step
-      router.push(`/forgot-password/reset?email=${encodeURIComponent(email)}`);
+      router.push(`/reset-password?email=${encodeURIComponent(email)}`);
     }, 1200);
   };
 
@@ -175,7 +175,7 @@ export default function ForgotPasswordVerifyForm() {
             type="button"
             onClick={handleResend}
             disabled={timer > 0}
-            className="font-bold text-brand-primary-600 hover:text-brand-primary-800 transition-colors cursor-pointer  disabled:pointer-events-none"
+            className="font-bold hover:text-brand-primary-800 transition-colors  disabled:text-gray-400 disabled:cursor-not-allowed"
           >
             Resend Code
           </button>

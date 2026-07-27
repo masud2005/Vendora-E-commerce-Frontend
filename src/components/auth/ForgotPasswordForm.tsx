@@ -33,7 +33,7 @@ export default function ForgotPasswordForm() {
   return (
     <div className="w-full max-w-sm sm:w-72 lg:w-96 mx-auto ">
       {/* Card Box container */}
-      <div className="bg-white border flex  border-gray-200 rounded shadow-xs sm:w-72 lg:w-96 p-5 sm:p-6 lg:p-8  flex-col gap-4 lg:gap-5">
+      <div className="bg-white border flex border-gray-200 rounded shadow-xs sm:w-72 lg:w-96 p-5 sm:p-6 lg:p-8 flex-col gap-4 lg:gap-5">
 
         {/* Step Progress Indicator */}
         <div className="relative flex items-center justify-between w-full px-2 select-none">
@@ -122,10 +122,7 @@ export default function ForgotPasswordForm() {
           <ArrowLeft className="size-4 mr-1.5" />
           <span>Back to Login</span>
         </a>
-
-      </div>
-
-      {/* Footer Badges (outside/below the card box) */}
+      </div>      {/* Footer Badges (outside/below the card box) */}
       <div className="flex items-center justify-center gap-6 mt-4 text-[10px] font-bold text-gray-400 tracking-wider uppercase select-none">
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="size-4 text-gray-400 stroke-[2.2]" />
