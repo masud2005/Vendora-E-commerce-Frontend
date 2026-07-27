@@ -12,13 +12,13 @@ export default function FAQHeader({ searchQuery, onSearchChange }: FAQHeaderProp
     <div className="mx-auto pt-6 sm:pt-10">
       <div className="relative overflow-hidden bg-linear-to-r from-[#185fa5] to-[#3a8edd] pt-16 pb-28 sm:pt-20 sm:pb-36 px-4 shadow-md">
         {/* Background Image Overlay with Blend Mode for Desk aesthetic */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-35 pointer-events-none"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600')`
           }}
         />
-        
+
         {/* Soft color layer decoration */}
         <div className="absolute inset-0 bg-brand-primary-800/15 backdrop-blur-[0.5px] pointer-events-none" />
 
@@ -32,9 +32,9 @@ export default function FAQHeader({ searchQuery, onSearchChange }: FAQHeaderProp
 
           {/* Search Bar Container */}
           <div className="w-full max-w-2xl mt-8 sm:mt-10 px-2 sm:px-0">
-            <form 
+            <form
               onSubmit={(e) => e.preventDefault()}
-              className="flex items-center bg-white rounded-lg shadow-xl border border-gray-100 p-1.5 pl-4 gap-2 transition-all focus-within:ring-2 focus-within:ring-brand-primary-200"
+              className="flex items-center bg-white rounded-lg shadow-xl border border-gray-100 p-1.5 pl-4 gap-2 transition-all  focus-within:ring-brand-primary-200"
             >
               <Search className="size-5 text-gray-400 shrink-0" />
               <input

@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Mail, ArrowLeft, ShieldCheck, Lock } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function ForgotPasswordForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,15 +26,15 @@ export default function ForgotPasswordForm() {
     setTimeout(() => {
       setLoading(false);
       toast.success("Recovery code sent successfully!");
-      setEmail("");
+      router.push(`/verify?email=${encodeURIComponent(email)}`);
     }, 1200);
   };
 
   return (
     <div className="w-full max-w-sm sm:w-72 lg:w-96 mx-auto ">
       {/* Card Box container */}
-      <div className="bg-white border flex  border-gray-200 rounded shadow-xs sm:w-72 lg:w-96 p-5 sm:p-6 lg:p-8  flex-col gap-4 lg:gap-5">
-        
+      <div className="bg-white border flex border-gray-200 rounded shadow-xs sm:w-72 lg:w-96 p-5 sm:p-6 lg:p-8 flex-col gap-4 lg:gap-5">
+
         {/* Step Progress Indicator */}
         <div className="relative flex items-center justify-between w-full px-2 select-none">
           {/* Background Connector Line */}
@@ -76,11 +78,10 @@ export default function ForgotPasswordForm() {
             <label className="block text-xs sm:text-sm font-bold text-gray-700 mb-1 select-none">
               Email or Phone Number
             </label>
-            <div className={`relative flex items-center border rounded px-3 transition-all focus-within:ring-2 ${
-              emailError 
-                ? "border-brand-semantic-400 focus-within:border-brand-semantic-400 focus-within:ring-brand-semantic-50/50" 
-                : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white focus-within:ring-brand-primary-100"
-            }`}>
+            <div className={`relative flex items-center border rounded px-3 transition-all  ${emailError
+                ? "border-brand-semantic-400 focus-within:border-brand-semantic-400"
+                : "border-gray-200 focus-within:border-brand-primary-600 focus-within:bg-white"
+              }`}>
               <Mail className="size-4 text-gray-400 mr-2 shrink-0" />
               <input
                 type="text"
@@ -121,10 +122,7 @@ export default function ForgotPasswordForm() {
           <ArrowLeft className="size-4 mr-1.5" />
           <span>Back to Login</span>
         </a>
-
-      </div>
-
-      {/* Footer Badges (outside/below the card box) */}
+      </div>      {/* Footer Badges (outside/below the card box) */}
       <div className="flex items-center justify-center gap-6 mt-4 text-[10px] font-bold text-gray-400 tracking-wider uppercase select-none">
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="size-4 text-gray-400 stroke-[2.2]" />
