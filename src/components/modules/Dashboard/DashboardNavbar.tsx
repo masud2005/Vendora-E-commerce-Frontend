@@ -14,7 +14,7 @@ export default function DashboardNavbar({
   onMobileToggle
 }: DashboardNavbarProps) {
   return (
-    <header className="h-16 border-b border-gray-200 bg-white flex items-center justify-between w-full shrink-0 z-20">
+    <header className="h-16 border-b border-gray-300 bg-barnd-primary-50 flex items-center justify-between w-full shrink-0 z-20">
       <DashboardNavContent
         currentRole={currentRole}
         onRoleChange={onRoleChange}

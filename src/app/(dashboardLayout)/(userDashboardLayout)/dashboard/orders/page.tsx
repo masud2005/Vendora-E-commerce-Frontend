@@ -4,7 +4,6 @@ import React, { useState, useMemo } from "react";
 import OrderHeader from "@/components/dashboard/user/orders/OrderHeader";
 import OrderTabs, { OrderStatusTab } from "@/components/dashboard/user/orders/OrderTabs";
 import OrderCard, { OrderItem } from "@/components/dashboard/user/orders/OrderCard";
-import Pagination from "@/components/shared/Pagination";
 
 const mockOrders: OrderItem[] = [
   {
@@ -73,8 +72,6 @@ const mockOrders: OrderItem[] = [
 export default function OrdersPage() {
   const [activeTab, setActiveTab] = useState<OrderStatusTab>("All Orders");
   const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
 
   // Filter orders by active status tab and search query
   const filteredOrders = useMemo(() => {
@@ -101,20 +98,6 @@ export default function OrdersPage() {
     });
   }, [activeTab, searchQuery]);
 
-  // Calculate total pages for pagination
-  const totalPages = Math.max(1, Math.ceil(filteredOrders.length / itemsPerPage));
-
-  // Get current page sliced orders list
-  const currentOrders = useMemo(() => {
-    const startIdx = (currentPage - 1) * itemsPerPage;
-    return filteredOrders.slice(startIdx, startIdx + itemsPerPage);
-  }, [filteredOrders, currentPage]);
-
-  // Reset page count when tab or search query changes
-  React.useEffect(() => {
-    setCurrentPage(1);
-  }, [activeTab, searchQuery]);
-
   return (
     <div className="bg-white border border-gray-200 rounded p-6 shadow-2xs space-y-6">
       
@@ -126,8 +109,8 @@ export default function OrdersPage() {
 
       {/* 3. Orders List Cards grid */}
       <div className="space-y-4 pt-2">
-        {currentOrders.length > 0 ? (
-          currentOrders.map((order) => (
+        {filteredOrders.length > 0 ? (
+          filteredOrders.map((order) => (
             <OrderCard key={order.id} order={order} />
           ))
         ) : (
@@ -138,23 +121,6 @@ export default function OrdersPage() {
           </div>
         )}
       </div>
-
-      {/* 4. Footer info count & Shared Pagination rendering */}
-      {filteredOrders.length > 0 && (
-        <div className="border-t border-gray-100 pt-5 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs sm:text-sm font-medium text-gray-500">
-            Showing {Math.min(filteredOrders.length, (currentPage - 1) * itemsPerPage + 1)} to{" "}
-            {Math.min(filteredOrders.length, currentPage * itemsPerPage)} of {filteredOrders.length} orders
-          </span>
-          <div className="!mt-0">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </div>
-        </div>
-      )}
 
     </div>
   );

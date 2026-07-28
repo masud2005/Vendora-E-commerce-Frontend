@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import { Search } from "lucide-react";
 
 interface OrderHeaderProps {
@@ -21,7 +21,7 @@ export default function OrderHeader({ searchQuery, setSearchQuery }: OrderHeader
       </div>
 
       {/* Right Search Input */}
-      <div className="relative w-full sm:w-72">
+      <div className="relative w-full sm:w-72 xl:w-80">
         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
         <input
           type="text"

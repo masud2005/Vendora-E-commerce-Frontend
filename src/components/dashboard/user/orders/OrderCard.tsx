@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+
 import toast from "react-hot-toast";
+import Link from "next/link";
 import { CheckCircle2, Truck, HelpCircle } from "lucide-react";
 
 export interface OrderItem {
@@ -38,6 +39,24 @@ export default function OrderCard({ order }: OrderCardProps) {
         return "text-red-600 bg-red-50";
       default:
         return "text-gray-600 bg-gray-100";
+    }
+  };
+
+  // Determine action button style to match the status badge colors
+  const getButtonColorStyle = (status: string) => {
+    switch (status) {
+      case "Completed":
+        return "bg-[#065F46] hover:bg-[#044E39] text-white";
+      case "To Receive":
+        return "bg-[#0369A1] hover:bg-[#0284c7] text-white";
+      case "Cancelled":
+        return "bg-gray-600 hover:bg-gray-700 text-white";
+      case "To Ship":
+        return "bg-amber-600 hover:bg-amber-700 text-white";
+      case "Unpaid":
+        return "bg-red-600 hover:bg-red-705 text-white";
+      default:
+        return "bg-gray-600 hover:bg-gray-700 text-white";
     }
   };
 
@@ -124,15 +143,15 @@ export default function OrderCard({ order }: OrderCardProps) {
         <div className="flex flex-row sm:flex-col gap-2 w-full sm:w-auto shrink-0 pt-3.5 sm:pt-0 border-t sm:border-t-0 border-gray-100 justify-end">
           {order.status === "Completed" && (
             <>
-              <button
-                onClick={() => toast.success("Opening order details...")}
-                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none"
+              <Link
+                href={`/dashboard/orders/${order.id}`}
+                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none text-center flex items-center justify-center"
               >
                 View Details
-              </button>
+              </Link>
               <button
                 onClick={() => toast.success("Item added to cart for reorder!")}
-                className="flex-1 sm:w-32 bg-[#0F4C81] hover:bg-[#0C447C] text-white font-bold py-2 rounded text-xs transition-colors shadow-2xs cursor-pointer select-none"
+                className={`flex-1 sm:w-32 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none ${getButtonColorStyle(order.status)}`}
               >
                 Reorder
               </button>
@@ -141,32 +160,32 @@ export default function OrderCard({ order }: OrderCardProps) {
 
           {order.status === "To Receive" && (
             <>
-              <button
-                onClick={() => toast.success("Tracking delivery location...")}
-                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none"
-              >
-                Track
-              </button>
-              <button
-                onClick={() => toast.success("Opening order details...")}
-                className="flex-1 sm:w-32 bg-[#0F4C81] hover:bg-[#0C447C] text-white font-bold py-2 rounded text-xs transition-colors shadow-2xs cursor-pointer select-none"
+              <Link
+                href={`/dashboard/orders/${order.id}`}
+                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none text-center flex items-center justify-center"
               >
                 View Details
+              </Link>
+              <button
+                onClick={() => toast.success("Tracking delivery location...")}
+                className={`flex-1 sm:w-32 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none ${getButtonColorStyle(order.status)}`}
+              >
+                Track
               </button>
             </>
           )}
 
           {order.status === "Cancelled" && (
             <>
-              <button
-                onClick={() => toast.success("Opening cancellation invoice details...")}
-                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none"
+              <Link
+                href={`/dashboard/orders/${order.id}`}
+                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none text-center flex items-center justify-center"
               >
                 Details
-              </button>
+              </Link>
               <button
                 onClick={() => toast.success("Item added to cart for reorder!")}
-                className="flex-1 sm:w-32 bg-[#A7F3D0] hover:bg-[#86EFAC] text-[#065F46] font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none"
+                className={`flex-1 sm:w-32 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none ${getButtonColorStyle(order.status)}`}
               >
                 Reorder
               </button>
@@ -175,15 +194,15 @@ export default function OrderCard({ order }: OrderCardProps) {
 
           {order.status !== "Completed" && order.status !== "To Receive" && order.status !== "Cancelled" && (
             <>
-              <button
-                onClick={() => toast.success("Opening order details...")}
-                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none"
+              <Link
+                href={`/dashboard/orders/${order.id}`}
+                className="flex-1 sm:w-32 border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none text-center flex items-center justify-center"
               >
                 View Details
-              </button>
+              </Link>
               <button
                 onClick={() => toast.error("Cancellation is not available at this step.")}
-                className="flex-1 sm:w-32 bg-[#0F4C81] hover:bg-[#0C447C] text-white font-bold py-2 rounded text-xs transition-colors shadow-2xs cursor-pointer select-none"
+                className={`flex-1 sm:w-32 font-bold py-2 rounded text-xs transition-colors cursor-pointer select-none ${getButtonColorStyle(order.status)}`}
               >
                 Need Help
               </button>

@@ -22,7 +22,7 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
   const profile = roleProfiles[userRole] || { name: "Guest User", type: "Public Account", bg: "bg-gray-400" };
 
   return (
-    <div className="flex flex-col h-full w-full select-none">
+    <div className="flex flex-col h-fit w-full select-none">
       {/* Brand Header: Centered on tablet (md), left-aligned on desktop (lg) */}
       <div className="pt-8 pb-6 px-4 lg:px-6 flex flex-col items-center lg:items-start">
         {/* Tablet Mini Logo */}
@@ -40,7 +40,7 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
 
 
       {/* Navigation Links Area */}
-      <nav className="flex-1 overflow-y-auto px-2.5 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch w-full">
+      <nav className="px-2.5 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch w-full">
         {menuItems.map((item, idx) => {
           const isActive = pathname === item.href;
           const Icon = item.icon;
@@ -68,7 +68,7 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
       </nav>
 
       {/* Bottom Footer Actions (Logout) */}
-      <div className="p-4 border-t border-gray-150/80 flex justify-center">
+      <div className="p-4 border-t border-gray-200 flex justify-center">
         {/* Desktop Full Button */}
         <Link
           href="/login"

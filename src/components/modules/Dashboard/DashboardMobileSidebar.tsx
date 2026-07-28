@@ -40,9 +40,9 @@ export default function DashboardMobileSidebar({
       <SheetContent
         side="left"
         showCloseButton={true}
-        className="p-0 w-72 bg-white border-r border-gray-200 flex flex-col justify-between"
+        className="p-0 w-72 bg-white border-r border-b border-gray-200 flex flex-col h-fit bottom-auto rounded-br-xl justify-between"
       >
-        <div className="flex-1 flex flex-col pt-6">
+        <div className="flex flex-col pt-6">
           {/* Brand Header */}
           <div className="px-6 pb-5 border-b border-gray-100 flex items-center gap-3.5">
             <div className="h-9 w-9 rounded-xl bg-brand-primary-600 flex items-center justify-center text-white shadow-md shadow-blue-600/10 font-black text-sm">
@@ -57,7 +57,7 @@ export default function DashboardMobileSidebar({
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex-1 px-3 py-6 space-y-1 overflow-y-auto">
+          <nav className="px-3 py-4 space-y-1">
             {menuItems.map((item, idx) => {
               const isActive = pathname === item.href;
               const Icon = item.icon;

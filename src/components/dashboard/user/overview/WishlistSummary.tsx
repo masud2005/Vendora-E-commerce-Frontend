@@ -33,7 +33,7 @@ export default function WishlistSummary() {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {wishlistProducts.map((product, idx) => (
           <div key={idx} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-2xs hover:shadow-xs transition-shadow duration-200 flex flex-col justify-between">
             

@@ -42,27 +42,28 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="flex flex-col sm:flex-row h-screen w-full bg-gray-50/50 font-sans overflow-hidden">
+    <div className="flex flex-col h-screen w-full bg-brand-primary-50 font-sans overflow-hidden">
       
-      {/* Desktop/Tablet Sidebar (left-anchored, full-height, stationary) */}
-      <div className="hidden sm:block shrink-0 bg-white border-r border-gray-200 w-30 lg:w-64 h-full transition-all duration-300">
-        <Sidebar userRole={role} />
-      </div>
-
-      {/* Mobile/Tablet Drawer Sidebar */}
-      <DashboardMobileSidebar
-        open={mobileOpen}
-        onOpenChange={setMobileOpen}
-        userRole={role}
+      {/* 1. Dynamic header navbar (Top level, spans full width) */}
+      <Navbar
+        currentRole={role}
+        onRoleChange={handleRoleChange}
+        onMobileToggle={() => setMobileOpen(true)}
       />
 
-      {/* Main Content Layout Container */}
-      <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-        {/* Dynamic header navbar */}
-        <Navbar
-          currentRole={role}
-          onRoleChange={handleRoleChange}
-          onMobileToggle={() => setMobileOpen(true)}
+      {/* 2. Split Layout Container below the Navbar */}
+      <div className="flex-1 flex flex-row min-w-0 overflow-hidden">
+        
+        {/* Desktop/Tablet Sidebar (flush with bottom border of navbar, h-fit white background) */}
+        <div className="hidden sm:block shrink-0 w-30 lg:w-64 transition-all duration-300 self-start h-fit bg-white border-r border-b border-gray-300">
+          <Sidebar userRole={role} />
+        </div>
+
+        {/* Mobile/Tablet Drawer Sidebar */}
+        <DashboardMobileSidebar
+          open={mobileOpen}
+          onOpenChange={setMobileOpen}
+          userRole={role}
         />
 
         {/* Children Page Body (Only this area scrolls) */}
