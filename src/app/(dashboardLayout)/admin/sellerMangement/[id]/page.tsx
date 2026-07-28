@@ -7,13 +7,18 @@ import ProfileMetaCard from "@/components/dashboard/admin/sellerManagement/profi
 import ProfileStats from "@/components/dashboard/admin/sellerManagement/profile/ProfileStats";
 import OverviewTab from "@/components/dashboard/admin/sellerManagement/profile/OverviewTab";
 import SalesPerformanceTab from "@/components/dashboard/admin/sellerManagement/profile/SalesPerformanceTab";
+import ProductCatalogTab from "@/components/dashboard/admin/sellerManagement/profile/ProductCatalogTab";
 import ProfileFooter from "@/components/dashboard/admin/sellerManagement/profile/ProfileFooter";
 
 export default function SellerProfilePage() {
   const [activeTab, setActiveTab] = useState("Overview");
 
   const handleTabChange = (tabName: string) => {
-    if (tabName !== "Overview" && tabName !== "Sales Performance") {
+    if (
+      tabName !== "Overview" && 
+      tabName !== "Sales Performance" && 
+      tabName !== "Product Catalog"
+    ) {
       toast.error(`"${tabName}" tab will be unlocked in the next steps! Please authorize the next figma step to continue.`);
     } else {
       setActiveTab(tabName);
@@ -58,6 +63,7 @@ export default function SellerProfilePage() {
       <div className="min-h-[220px]">
         {activeTab === "Overview" && <OverviewTab />}
         {activeTab === "Sales Performance" && <SalesPerformanceTab />}
+        {activeTab === "Product Catalog" && <ProductCatalogTab />}
       </div>
 
       {/* 6. Settlement disputes & terms footer */}
