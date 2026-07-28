@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import CommandHeader from "@/components/dashboard/admin/CommandHeader";
-import AdminStats from "@/components/dashboard/admin/AdminStats";
-import RevenueTrends from "@/components/dashboard/admin/RevenueTrends";
-import SystemAlerts from "@/components/dashboard/admin/SystemAlerts";
-import ActiveSessions from "@/components/dashboard/admin/ActiveSessions";
-import TopSellers from "@/components/dashboard/admin/TopSellers";
-import RecentActivity from "@/components/dashboard/admin/RecentActivity";
+import CommandHeader from "@/components/dashboard/admin/overview/CommandHeader";
+import AdminStats from "@/components/dashboard/admin/overview/AdminStats";
+import RevenueTrends from "@/components/dashboard/admin/overview/RevenueTrends";
+import SystemAlerts from "@/components/dashboard/admin/overview/SystemAlerts";
+import ActiveSessions from "@/components/dashboard/admin/overview/ActiveSessions";
+import TopSellers from "@/components/dashboard/admin/overview/TopSellers";
+import RecentActivity from "@/components/dashboard/admin/overview/RecentActivity";
 
 export default function AdminDashboardPage() {
   return (
