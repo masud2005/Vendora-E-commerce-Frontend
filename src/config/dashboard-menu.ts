@@ -13,7 +13,13 @@ import {
   CheckSquare,
   Layers,
   Bike,
-  DollarSign
+  DollarSign,
+  Store,
+  Shapes,
+  Megaphone,
+  Banknote,
+  LineChart,
+  Headset
 } from "lucide-react";
 
 export interface MenuItem {
@@ -42,13 +48,17 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
     { title: "Store Settings", href: "/seller/settings", icon: Settings }
   ],
   
-  // ৩. Admin এর জন্য ডেমো মেনু:
+  // ৩. Admin এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
   admin: [
-    { title: "Platform Overview", href: "/admin", icon: LayoutGrid },
-    { title: "Manage Sellers", href: "/admin/sellers", icon: Users },
-    { title: "Product Approvals", href: "/admin/approvals", icon: CheckSquare },
-    { title: "Categories", href: "/admin/categories", icon: Layers },
-    { title: "Platform Settings", href: "/admin/settings", icon: Settings }
+    { title: "Overview", href: "/admin", icon: LayoutGrid },
+    { title: "User Management", href: "/admin/users", icon: Users },
+    { title: "Seller Management", href: "/admin/sellers", icon: Store },
+    { title: "Catalog", href: "/admin/catalog", icon: Shapes },
+    { title: "Marketing", href: "/admin/marketing", icon: Megaphone },
+    { title: "Financials", href: "/admin/financials", icon: Banknote },
+    { title: "Analytics", href: "/admin/analytics", icon: LineChart },
+    { title: "CMS & Support", href: "/admin/cms", icon: Headset },
+    { title: "Settings", href: "/admin/settings", icon: Settings }
   ],
   
   // ৪. Delivery Rider এর জন্য ডেমো মেনু:
