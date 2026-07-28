@@ -1,11 +1,41 @@
 "use client";
 
+import React from "react";
+import CommandHeader from "@/components/dashboard/admin/overview/CommandHeader";
+import AdminStats from "@/components/dashboard/admin/overview/AdminStats";
+import RevenueTrends from "@/components/dashboard/admin/overview/RevenueTrends";
+import SystemAlerts from "@/components/dashboard/admin/overview/SystemAlerts";
+import ActiveSessions from "@/components/dashboard/admin/overview/ActiveSessions";
+import TopSellers from "@/components/dashboard/admin/overview/TopSellers";
+import RecentActivity from "@/components/dashboard/admin/overview/RecentActivity";
+
 export default function AdminDashboardPage() {
   return (
-    <div className="h-full flex items-center justify-center bg-white border border-gray-150 rounded-lg p-8">
-      <h1 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
-        Admin Dashboard
-      </h1>
+    <div className="space-y-6 w-full pb-12 font-sans select-none text-left">
+      
+      {/* 1. Command Center Header Area */}
+      <CommandHeader timeRange="Last 30 Days" />
+
+      {/* 2. KPI Stat Cards Row (5 Columns Grid) */}
+      <AdminStats />
+
+      {/* 3. Midsection: Interactive Recharts Graph and System Alerts Column */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <RevenueTrends />
+        
+        {/* Right Stack: Alerts & Active Sessions */}
+        <div className="space-y-6 flex flex-col justify-between">
+          <SystemAlerts />
+          <ActiveSessions />
+        </div>
+      </div>
+
+      {/* 4. Bottom Section: Top Sellers list and Recent Platform Activities */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <TopSellers />
+        <RecentActivity />
+      </div>
+
     </div>
   );
 }
