@@ -31,7 +31,7 @@ export interface MenuItem {
 export const roleMenuConfigs: Record<string, MenuItem[]> = {
   // ১. Customer/User এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
   user: [
-    { title: "Overview", href: "/dashboard/overview", icon: LayoutGrid },
+    { title: "Overview", href: "/dashboard", icon: LayoutGrid },
     { title: "Orders", href: "/dashboard/orders", icon: Package },
     { title: "Wallet", href: "/dashboard/wallet", icon: Wallet },
     { title: "Reviews", href: "/dashboard/reviews", icon: MessageSquareText },
@@ -51,8 +51,8 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
   // ৩. Admin এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
   admin: [
     { title: "Overview", href: "/admin", icon: LayoutGrid },
-    { title: "User Management", href: "/admin/users", icon: Users },
-    { title: "Seller Management", href: "/admin/sellers", icon: Store },
+    { title: "User Management", href: "/admin/userManagement", icon: Users },
+    { title: "Seller Management", href: "/admin/sellerManagement", icon: Store },
     { title: "Catalog", href: "/admin/catalog", icon: Shapes },
     { title: "Marketing", href: "/admin/marketing", icon: Megaphone },
     { title: "Financials", href: "/admin/financials", icon: Banknote },
