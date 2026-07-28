@@ -3,6 +3,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { Eye } from "lucide-react";
+import Link from "next/link";
 
 // Mock Seller directory list data matching mockup
 const sellersList = [
@@ -144,13 +145,13 @@ export default function SellerDirectory() {
 
                 {/* Options button */}
                 <td className="py-3.5 px-3 text-center">
-                  <button 
-                    onClick={() => toast.success(`Viewing seller profile: ${row.name}`)}
-                    className="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-[#0F4C81] transition-colors cursor-pointer"
+                  <Link 
+                    href={`/admin/sellerMangement/${row.id}`}
+                    className="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-[#0F4C81] transition-colors cursor-pointer flex items-center justify-center"
                     title="View Seller Profile"
                   >
                     <Eye className="size-4.5" />
-                  </button>
+                  </Link>
                 </td>
 
               </tr>

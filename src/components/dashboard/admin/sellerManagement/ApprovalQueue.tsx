@@ -2,7 +2,8 @@
 
 import React from "react";
 import toast from "react-hot-toast";
-import { ClipboardList, CheckCircle2, AlertTriangle, Hourglass, HelpCircle } from "lucide-react";
+import Link from "next/link";
+import { ClipboardList, CheckCircle2, AlertTriangle, Hourglass } from "lucide-react";
 
 export default function ApprovalQueue() {
   return (
@@ -30,7 +31,13 @@ export default function ApprovalQueue() {
               <h4 className="text-xs font-bold text-gray-900 leading-tight">Luxe Decor Hub</h4>
               <span className="text-[10px] text-gray-400 font-semibold mt-0.5 block">Application #APP-8821</span>
             </div>
-            <span className="text-gray-400 hover:text-gray-600 cursor-pointer">➔</span>
+            <Link 
+              href="/admin/sellerMangement/SL-8842-DH" 
+              className="text-gray-400 hover:text-[#0F4C81] transition-colors font-bold cursor-pointer"
+              title="View Application Details"
+            >
+              ➔
+            </Link>
           </div>
           {/* Credentials Info block */}
           <div className="grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-[10px] font-bold">
@@ -69,7 +76,13 @@ export default function ApprovalQueue() {
               <h4 className="text-xs font-bold text-gray-900 leading-tight">Urban Wear Collective</h4>
               <span className="text-[10px] text-gray-400 font-semibold mt-0.5 block">Application #APP-8824</span>
             </div>
-            <span className="text-gray-400 hover:text-gray-600 cursor-pointer">➔</span>
+            <Link 
+              href="/admin/sellerMangement/SL-8824-UW" 
+              className="text-gray-400 hover:text-[#0F4C81] transition-colors font-bold cursor-pointer"
+              title="View Application Details"
+            >
+              ➔
+            </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-[10px] font-bold">
             <div className="flex items-center gap-1 text-rose-600">
@@ -83,12 +96,12 @@ export default function ApprovalQueue() {
               <span className="ml-auto text-[9px] font-black uppercase bg-emerald-50 px-1 rounded">Valid</span>
             </div>
           </div>
-          <button
-            onClick={() => toast.success("Opening Application details for APP-8824...")}
+          <Link
+            href="/admin/sellerMangement/SL-8824-UW"
             className="w-full border text-center bg-blue-50/70 hover:bg-blue-100/70 text-[#0F4C81] font-bold text-[11px] py-2 rounded transition-colors cursor-pointer block"
           >
             View Details
-          </button>
+          </Link>
         </div>
 
         {/* Item 3: Techno Gizmos */}
@@ -98,7 +111,13 @@ export default function ApprovalQueue() {
               <h4 className="text-xs font-bold text-gray-900 leading-tight">Techno Gizmos</h4>
               <span className="text-[10px] text-gray-400 font-semibold mt-0.5 block">Application #APP-8830</span>
             </div>
-            <span className="text-gray-400 hover:text-gray-600 cursor-pointer">➔</span>
+            <Link 
+              href="/admin/sellerMangement/SL-8830-TG" 
+              className="text-gray-400 hover:text-[#0F4C81] transition-colors font-bold cursor-pointer"
+              title="View Application Details"
+            >
+              ➔
+            </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-[10px] font-bold">
             <div className="flex items-center gap-1 text-amber-700">
@@ -112,12 +131,12 @@ export default function ApprovalQueue() {
               <span className="ml-auto text-[9px] font-black uppercase bg-amber-50 px-1 rounded">Pending</span>
             </div>
           </div>
-          <button
-            onClick={() => toast.success("Opening Application details for APP-8830...")}
+          <Link
+            href="/admin/sellerMangement/SL-8830-TG"
             className="w-full text-center bg-blue-50/70 hover:bg-blue-100/70 text-[#0F4C81] font-bold text-[11px] py-2 rounded transition-colors cursor-pointer block border"
           >
             View Details
-          </button>
+          </Link>
         </div>
 
       </div>

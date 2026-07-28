@@ -52,7 +52,7 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
   admin: [
     { title: "Overview", href: "/admin", icon: LayoutGrid },
     { title: "User Management", href: "/admin/userManagement", icon: Users },
-    { title: "Seller Management", href: "/admin/sellerManagement", icon: Store },
+    { title: "Seller Management", href: "/admin/sellerMangement", icon: Store },
     { title: "Catalog", href: "/admin/catalog", icon: Shapes },
     { title: "Marketing", href: "/admin/marketing", icon: Megaphone },
     { title: "Financials", href: "/admin/financials", icon: Banknote },

@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import BuyerHeader from "@/components/dashboard/admin/users/BuyerHeader";
-import BuyerStats from "@/components/dashboard/admin/users/BuyerStats";
-import BuyerTable from "@/components/dashboard/admin/users/BuyerTable";
+import BuyerHeader from "@/components/dashboard/admin/userManagement/BuyerHeader";
+import BuyerStats from "@/components/dashboard/admin/userManagement/BuyerStats";
+import BuyerTable from "@/components/dashboard/admin/userManagement/BuyerTable";
 
 export default function BuyerManagementPage() {
   return (

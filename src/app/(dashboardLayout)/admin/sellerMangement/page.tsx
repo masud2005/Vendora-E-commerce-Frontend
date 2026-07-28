@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import SellerHeader from "@/components/dashboard/admin/sellers/SellerHeader";
-import ApprovalQueue from "@/components/dashboard/admin/sellers/ApprovalQueue";
-import SellerDirectory from "@/components/dashboard/admin/sellers/SellerDirectory";
-import CommissionStructure from "@/components/dashboard/admin/sellers/CommissionStructure";
+import SellerHeader from "@/components/dashboard/admin/sellerManagement/SellerHeader";
+import ApprovalQueue from "@/components/dashboard/admin/sellerManagement/ApprovalQueue";
+import SellerDirectory from "@/components/dashboard/admin/sellerManagement/SellerDirectory";
+import CommissionStructure from "@/components/dashboard/admin/sellerManagement/CommissionStructure";
 
 export default function SellerManagementPage() {
   return (
     <div className="space-y-6 w-full pb-12 font-sans select-none text-left">
-      
+
       {/* 1. Header with Title, description, export buttons */}
       <SellerHeader />
 
