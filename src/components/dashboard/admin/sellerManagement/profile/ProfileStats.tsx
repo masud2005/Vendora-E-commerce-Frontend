@@ -5,7 +5,7 @@ import { FileText, ShoppingCart, Percent, Star } from "lucide-react";
 
 export default function ProfileStats() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 select-none text-left">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 select-none text-left">
       
       {/* Stat 1: Total Revenue */}
       <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-3xs flex flex-col justify-between min-h-[110px]">

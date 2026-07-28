@@ -6,7 +6,7 @@ import { Mail, Ban, Check, MapPin, Building2 } from "lucide-react";
 
 export default function ProfileMetaCard() {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-3xs flex flex-col md:flex-row md:items-center justify-between gap-5 text-left select-none">
+    <div className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-3xs flex flex-col xl:flex-row xl:items-center justify-between gap-5 text-left select-none">
       
       {/* Left side: Brand Logo and Title details */}
       <div className="flex items-center gap-4">
@@ -46,7 +46,7 @@ export default function ProfileMetaCard() {
       </div>
 
       {/* Right side: Action Buttons */}
-      <div className="flex flex-wrap items-center gap-3 shrink-0 self-start md:self-auto">
+      <div className="flex flex-wrap items-center gap-3 shrink-0 self-start xl:self-auto">
         <button
           onClick={() => toast.success("Message inbox opened with Luxe Decor Hub")}
           className="flex items-center justify-center gap-1.5 border border-blue-200 bg-blue-50/40 hover:bg-blue-50 text-[#0F4C81] font-bold py-2 px-4 rounded text-xs transition-colors shadow-3xs cursor-pointer"
