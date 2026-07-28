@@ -107,7 +107,7 @@ export default function RecentActivity() {
                   <button
                     onClick={() => {
                       setSelectedActivity(row);
-                      toast.success(`Opening details for ID: ${row.id}`);
+                      
                     }}
                     className="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-[#0F4C81] transition-colors cursor-pointer"
                     title="View Audit Log Detail"

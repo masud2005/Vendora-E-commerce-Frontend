@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Eye } from "lucide-react";
+import BuyerDetailsDrawer from "./details/BuyerDetailsDrawer";
 
 // Mock Buyers data matching mockup
 const buyers = [
@@ -16,7 +17,10 @@ const buyers = [
     statusStyle: "text-emerald-700 bg-emerald-50 border border-emerald-200",
     statusDot: "bg-emerald-500",
     totalOrders: 142,
-    lastActive: "2 mins ago"
+    lastActive: "2 mins ago",
+    joinedDate: "Oct 12, 2021",
+    phone: "+880 1712-345678",
+    address: "123 Green Road, Dhanmondi, Dhaka"
   },
   {
     id: "#BUY-4309",
@@ -28,7 +32,10 @@ const buyers = [
     statusStyle: "text-amber-700 bg-amber-50 border border-amber-200",
     statusDot: "bg-amber-500",
     totalOrders: 8,
-    lastActive: "Oct 24, 2023"
+    lastActive: "Oct 24, 2023",
+    joinedDate: "Mar 05, 2022",
+    phone: "+880 1833-987654",
+    address: "House 45, Road 11, Banani, Dhaka"
   },
   {
     id: "#BUY-9921",
@@ -40,7 +47,10 @@ const buyers = [
     statusStyle: "text-rose-700 bg-rose-50 border border-rose-200",
     statusDot: "bg-rose-500",
     totalOrders: 21,
-    lastActive: "Sep 12, 2023"
+    lastActive: "Sep 12, 2023",
+    joinedDate: "Jan 18, 2021",
+    phone: "+880 1515-443322",
+    address: "Block C, Bashundhara R/A, Dhaka"
   },
   {
     id: "#BUY-2201",
@@ -52,11 +62,16 @@ const buyers = [
     statusStyle: "text-emerald-700 bg-emerald-50 border border-emerald-200",
     statusDot: "bg-emerald-500",
     totalOrders: 56,
-    lastActive: "4 hours ago"
+    lastActive: "4 hours ago",
+    joinedDate: "Nov 30, 2022",
+    phone: "+880 1912-887766",
+    address: "Flat 4B, Sector 7, Uttara, Dhaka"
   }
 ];
 
 export default function BuyerTable() {
+  const [selectedBuyer, setSelectedBuyer] = useState<any | null>(null);
+
   return (
     <div className="bg-white border border-gray-200 rounded shadow-3xs text-left flex flex-col justify-between overflow-hidden">
       
@@ -111,7 +126,8 @@ export default function BuyerTable() {
                 <td className="py-4 px-4 text-center whitespace-nowrap">
                   <button
                     onClick={() => {
-                      toast.success(`Viewing buyer profile: ${row.name}`);
+                      setSelectedBuyer(row);
+                    
                     }}
                     className="p-1 rounded hover:bg-gray-100 text-gray-400 hover:text-[#0F4C81] transition-colors cursor-pointer"
                     title="View Buyer Profile"
@@ -156,6 +172,14 @@ export default function BuyerTable() {
           </button>
         </div>
       </div>
+
+      {/* Buyer Details Slide-over Panel Overlay */}
+      {selectedBuyer && (
+        <BuyerDetailsDrawer 
+          selectedBuyer={selectedBuyer} 
+          onClose={() => setSelectedBuyer(null)} 
+        />
+      )}
     </div>
   );
 }
