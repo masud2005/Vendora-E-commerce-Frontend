@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import toast from "react-hot-toast";
+
+import Link from "next/link";
 import { Download, Calendar, Globe, Award } from "lucide-react";
 
 export default function AnalyticsHeader() {
@@ -13,7 +13,14 @@ export default function AnalyticsHeader() {
         <div className="flex items-center gap-1.5 text-xs text-gray-400 font-bold mb-1.5">
           <span>Analytics</span>
           <span>&gt;</span>
-          <span className="text-[#0F4C81] hover:underline cursor-pointer">Executive Dashboard</span>
+          <span className="text-[#0F4C81]">Executive Dashboard</span>
+          <span>&gt;</span>
+          <Link 
+            href="/admin/analytics/behavioral" 
+            className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+          >
+            Behavioral Reports
+          </Link>
         </div>
         <h1 className="text-xl sm:text-2xl font-black text-gray-900 leading-tight">
           Platform Insights
@@ -30,7 +37,7 @@ export default function AnalyticsHeader() {
         <div className="flex items-center gap-1.5 border border-gray-150 rounded px-2.5 py-1.5 bg-gray-50/50 hover:bg-gray-50 cursor-pointer transition-colors text-xs font-semibold text-gray-600">
           <Calendar className="size-3.5 text-gray-400" />
           <select 
-            onChange={() => toast.success("Filtered date range updated")}
+           
             className="bg-transparent focus:outline-none cursor-pointer pr-1 text-[11px] font-bold"
           >
             <option>Last 30 Days</option>
@@ -43,7 +50,7 @@ export default function AnalyticsHeader() {
         <div className="flex items-center gap-1.5 border border-gray-150 rounded px-2.5 py-1.5 bg-gray-50/50 hover:bg-gray-50 cursor-pointer transition-colors text-xs font-semibold text-gray-600">
           <Globe className="size-3.5 text-gray-400" />
           <select 
-            onChange={() => toast.success("Region filter updated")}
+            
             className="bg-transparent focus:outline-none cursor-pointer pr-1 text-[11px] font-bold"
           >
             <option>All Regions</option>
@@ -57,7 +64,7 @@ export default function AnalyticsHeader() {
         <div className="flex items-center gap-1.5 border border-gray-150 rounded px-2.5 py-1.5 bg-gray-50/50 hover:bg-gray-50 cursor-pointer transition-colors text-xs font-semibold text-gray-600">
           <Award className="size-3.5 text-gray-400" />
           <select 
-            onChange={() => toast.success("Seller Tier filter updated")}
+           
             className="bg-transparent focus:outline-none cursor-pointer pr-1 text-[11px] font-bold"
           >
             <option>All Seller Tiers</option>
@@ -69,7 +76,7 @@ export default function AnalyticsHeader() {
 
         {/* Export CSV Button */}
         <button
-          onClick={() => toast.success("Generating and downloading Platform Insights report...")}
+      
           className="flex items-center justify-center gap-1.5 bg-[#0F4C81] hover:bg-[#0C447C] text-white font-bold py-1.5 px-4.5 rounded text-xs transition-colors shadow-3xs cursor-pointer h-[32px]"
         >
           <Download className="size-3.5" />

@@ -2,6 +2,7 @@
 
 import React from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 import { Laptop, Leaf, Watch, Star, ArrowUpRight, ArrowDownRight } from "lucide-react";
 
 const sellers = [
@@ -43,12 +44,12 @@ export default function TopSellers() {
         <h3 className="text-sm sm:text-base font-extrabold text-gray-900">
           Top Sellers
         </h3>
-        <button
-          onClick={() => toast.success("Opening complete top sellers database...")}
+        <Link
+          href="/admin/analytics/behavioral"
           className="text-[10px] sm:text-xs font-black text-[#0F4C81] hover:underline uppercase tracking-wide cursor-pointer"
         >
           See All
-        </button>
+        </Link>
       </div>
 
       {/* Sellers List */}

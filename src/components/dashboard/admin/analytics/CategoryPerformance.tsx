@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import toast from "react-hot-toast";
+
 
 const categories = [
   { name: "Electronics", val: "$5.2M", percent: 85 },
@@ -44,7 +43,7 @@ export default function CategoryPerformance() {
       {/* Bottom Link Action */}
       <div className="border-t border-gray-50 pt-4 mt-5">
         <button
-          onClick={() => toast.success("Redirecting to full inventory analysis breakdown...")}
+          
           className="text-xs font-black text-[#0F4C81] hover:underline inline-flex items-center gap-1 cursor-pointer transition-colors"
         >
           <span>View Full Inventory Breakdown</span>
