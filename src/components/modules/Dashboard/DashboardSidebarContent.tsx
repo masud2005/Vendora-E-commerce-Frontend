@@ -19,55 +19,59 @@ const roleProfiles: Record<string, { name: string; type: string; bg: string }> =
 export default function DashboardSidebarContent({ userRole }: DashboardSidebarContentProps) {
   const pathname = usePathname();
   const menuItems = roleMenuConfigs[userRole] || [];
-  const profile = roleProfiles[userRole] || { name: "Guest User", type: "Public Account", bg: "bg-gray-400" };
 
   return (
-    <div className="flex flex-col h-fit w-full select-none">
-      {/* Brand Header: Centered on tablet (md), left-aligned on desktop (lg) */}
-      <div className="pt-8 pb-6 px-4 lg:px-6 flex flex-col items-center lg:items-start">
-        {/* Tablet Mini Logo */}
-        <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-lg bg-brand-primary-600 text-white shrink-0 shadow-sm shadow-blue-600/20 font-black text-sm">
-          V
+    <div className="flex flex-col h-full w-full select-none justify-between">
+      
+      {/* Top Section: Logo & Menu links */}
+      <div className="flex flex-col w-full">
+        
+        {/* Brand Header */}
+        <div className="pt-8 pb-6 px-4 lg:px-6 flex flex-col items-center lg:items-start">
+          {/* Tablet Mini Logo */}
+          <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-lg bg-brand-primary-600 text-white shrink-0 shadow-sm shadow-blue-600/20 font-black text-sm">
+            V
+          </div>
+          {/* Desktop Full Logo */}
+          <span className="hidden lg:inline text-xl font-bold text-[#0F4C81] tracking-tight leading-none">
+            Vendora
+          </span>
+          <span className="hidden lg:inline text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">
+            Management Portal
+          </span>
         </div>
-        {/* Desktop Full Logo */}
-        <span className="hidden lg:inline text-xl font-bold text-[#0F4C81] tracking-tight leading-none">
-          Vendora
-        </span>
-        <span className="hidden lg:inline text-xs text-gray-500 font-medium mt-1 uppercase tracking-wide">
-          Management Portal
-        </span>
+
+        {/* Navigation Links Area */}
+        <nav className="px-2.5 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch w-full">
+          {menuItems.map((item, idx) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+
+            return (
+              <Link
+                key={idx}
+                href={item.href}
+                className={`flex flex-col lg:flex-row items-center gap-1 lg:gap-3 p-2 lg:px-4 lg:py-2.5 rounded text-center lg:text-left transition-all duration-150 w-full justify-center lg:justify-start ${
+                  isActive
+                    ? "bg-[#A7F3D0] text-[#065F46]"
+                    : "text-gray-600 hover:bg-gray-150/40 hover:text-gray-900"
+                }`}
+                title={item.title}
+              >
+                <Icon className={`size-5 lg:size-4.5 shrink-0 ${isActive ? "text-[#065F46]" : "text-gray-500"}`} />
+                <span className="hidden lg:inline text-xs font-bold truncate">{item.title}</span>
+                {/* Tablet tiny text label under the icon */}
+                <span className="inline lg:hidden text-[9px] font-bold truncate tracking-tighter leading-none mt-0.5">
+                  {item.title}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
+
       </div>
 
-
-      {/* Navigation Links Area */}
-      <nav className="px-2.5 lg:px-4 py-4 space-y-1.5 scrollbar-none flex flex-col items-center lg:items-stretch w-full">
-        {menuItems.map((item, idx) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
-
-          return (
-            <Link
-              key={idx}
-              href={item.href}
-              className={`flex flex-col lg:flex-row items-center gap-1 lg:gap-3 p-2 lg:px-4 lg:py-2.5 rounded text-center lg:text-left transition-all duration-150 w-full justify-center lg:justify-start ${
-                isActive
-                  ? "bg-[#A7F3D0] text-[#065F46]"
-                  : "text-gray-600 hover:bg-gray-150/40 hover:text-gray-900"
-              }`}
-              title={item.title}
-            >
-              <Icon className={`size-5 lg:size-4.5 shrink-0 ${isActive ? "text-[#065F46]" : "text-gray-500"}`} />
-              <span className="hidden lg:inline text-xs font-bold truncate">{item.title}</span>
-              {/* Tablet tiny text label under the icon */}
-              <span className="inline lg:hidden text-[9px] font-bold truncate tracking-tighter leading-none mt-0.5">
-                {item.title}
-              </span>
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* Bottom Footer Actions (Logout) */}
+      {/* Bottom Footer Actions (Logout) sitting at the absolute bottom */}
       <div className="p-4 border-t border-gray-200 flex justify-center">
         {/* Desktop Full Button */}
         <Link
@@ -87,6 +91,7 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
           <LogOut className="size-5 text-red-600 stroke-[2.2]" />
         </Link>
       </div>
+
     </div>
   );
 }

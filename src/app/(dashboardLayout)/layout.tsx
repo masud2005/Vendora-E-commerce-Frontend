@@ -54,8 +54,8 @@ export default function DashboardLayout({
       {/* 2. Split Layout Container below the Navbar */}
       <div className="flex-1 flex flex-row min-w-0 overflow-hidden">
         
-        {/* Desktop/Tablet Sidebar (flush with bottom border of navbar, h-fit white background) */}
-        <div className="hidden sm:block shrink-0 w-30 lg:w-64 transition-all duration-300 self-start h-fit bg-white border-r border-b border-gray-300">
+        {/* Desktop/Tablet Sidebar (flush with bottom border of navbar, h-full white background) */}
+        <div className="hidden sm:block shrink-0 w-30 lg:w-64 transition-all duration-300 h-full bg-white border-r border-gray-300">
           <Sidebar userRole={role} />
         </div>
 
