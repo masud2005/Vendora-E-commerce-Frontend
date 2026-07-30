@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import { Search, SlidersHorizontal, MoreVertical, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface OrderItem {
@@ -140,7 +139,6 @@ export default function OrdersList() {
             />
           </div>
           <button 
-            onClick={() => toast.success("Opening advanced filter drawer...")}
             className="p-2 border border-gray-200 hover:bg-gray-50 text-gray-500 rounded-lg cursor-pointer transition-colors"
             title="Advanced Filters"
           >
@@ -230,7 +228,6 @@ export default function OrdersList() {
                   {/* Actions vertical dots */}
                   <td className="py-3.5 px-3 whitespace-nowrap text-right">
                     <button 
-                      onClick={() => toast.success(`Showing options for ${row.id}`)}
                       className="p-1 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors cursor-pointer"
                     >
                       <MoreVertical className="size-4" />
@@ -257,15 +254,15 @@ export default function OrdersList() {
           <span className="h-6 w-6 flex items-center justify-center bg-[#0F4C81] text-white font-bold rounded text-xs">
             1
           </span>
-          <button onClick={() => toast.success("Loading page 2...")} className="h-6 w-6 flex items-center justify-center border border-gray-250 bg-white hover:bg-gray-50 text-gray-600 rounded text-xs cursor-pointer">
+          <button className="h-6 w-6 flex items-center justify-center border border-gray-250 bg-white hover:bg-gray-50 text-gray-600 rounded text-xs cursor-pointer">
             2
           </button>
-          <button onClick={() => toast.success("Loading page 3...")} className="h-6 w-6 flex items-center justify-center border border-gray-250 bg-white hover:bg-gray-50 text-gray-600 rounded text-xs cursor-pointer">
+          <button className="h-6 w-6 flex items-center justify-center border border-gray-250 bg-white hover:bg-gray-50 text-gray-600 rounded text-xs cursor-pointer">
             3
           </button>
 
           {/* Next */}
-          <button onClick={() => toast.success("Loading next page...")} className="h-6 px-1.5 rounded border border-gray-250 bg-white text-gray-650 hover:bg-gray-50 cursor-pointer">
+          <button className="h-6 px-1.5 rounded border border-gray-250 bg-white text-gray-650 hover:bg-gray-50 cursor-pointer">
             <ChevronRight className="size-3.5" />
           </button>
         </div>

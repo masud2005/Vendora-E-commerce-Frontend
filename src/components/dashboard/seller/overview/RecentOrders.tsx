@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import { SlidersHorizontal, MoreVertical, ChevronLeft, ChevronRight } from "lucide-react";
 
 const recentOrdersData = [
@@ -50,10 +49,7 @@ export default function RecentOrders() {
         <div className="flex items-center gap-2 text-xs select-none">
           <select 
             value={selectedStatus}
-            onChange={(e) => {
-              setSelectedStatus(e.target.value);
-              toast.success(`Filtering orders by status: ${e.target.value}`);
-            }}
+            onChange={(e) => setSelectedStatus(e.target.value)}
             className="bg-white border border-gray-200 rounded px-2.5 py-1 text-gray-600 font-semibold focus:outline-none cursor-pointer"
           >
             <option>All Status</option>
@@ -62,7 +58,6 @@ export default function RecentOrders() {
             <option>Delivered</option>
           </select>
           <button 
-            onClick={() => toast.success("Opening advanced orders filter drawer...")}
             className="p-1.5 border border-gray-200 hover:bg-gray-50 text-gray-500 rounded cursor-pointer transition-colors"
             title="Advanced Filters"
           >
@@ -126,7 +121,6 @@ export default function RecentOrders() {
                 {/* Actions Button */}
                 <td className="py-3.5 px-3 whitespace-nowrap text-right">
                   <button 
-                    onClick={() => toast.success(`Viewing details for order ${row.id}`)}
                     className="p-1 text-gray-400 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors cursor-pointer"
                   >
                     <MoreVertical className="size-4" />
@@ -151,7 +145,6 @@ export default function RecentOrders() {
             <ChevronLeft className="size-3.5" />
           </button>
           <button 
-            onClick={() => toast.success("Loading next orders page...")}
             className="h-6 w-6 flex items-center justify-center rounded border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 cursor-pointer"
           >
             <ChevronRight className="size-3.5" />

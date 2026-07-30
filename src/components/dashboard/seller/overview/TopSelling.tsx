@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import toast from "react-hot-toast";
 
 const topProducts = [
   {
@@ -81,7 +80,6 @@ export default function TopSelling() {
       {/* Bottom Action Button */}
       <div className="border-t border-gray-50 pt-4 mt-5 text-center">
         <button
-          onClick={() => toast.success("Redirecting to your full product catalog inventory...")}
           className="text-xs font-black text-[#0F4C81] hover:underline cursor-pointer transition-colors"
         >
           View All Inventory
