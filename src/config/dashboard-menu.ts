@@ -38,14 +38,15 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
     { title: "Notifications", href: "/dashboard/notifications", icon: Bell },
     { title: "Settings", href: "/dashboard/settings", icon: Settings }
   ],
-  
-  // ২. Seller/Merchant এর জন্য ডেমো মেনু:
+  // ২. Seller/Merchant এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
   seller: [
     { title: "Overview", href: "/seller", icon: LayoutGrid },
-    { title: "My Products", href: "/seller/products", icon: Package },
-    { title: "Orders Received", href: "/seller/orders", icon: ShoppingCart },
-    { title: "Analytics", href: "/seller/analytics", icon: BarChart3 },
-    { title: "Store Settings", href: "/seller/settings", icon: Settings }
+    { title: "Orders & Fulfillment", href: "/seller/orders", icon: ShoppingCart },
+    { title: "Products & Inventory", href: "/seller/products", icon: Package },
+    { title: "Marketing & Discount", href: "/seller/marketing", icon: Megaphone },
+    { title: "Analytics", href: "/seller/analytics", icon: LineChart },
+    { title: "Message", href: "/seller/messages", icon: MessageSquareText },
+    { title: "Wallet & Settings", href: "/seller/settings", icon: Settings }
   ],
   
   // ৩. Admin এর জন্য আপলোড করা ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
