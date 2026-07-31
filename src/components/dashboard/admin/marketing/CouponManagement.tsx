@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Globe, Store, Pencil, Trash2 } from "lucide-react";
+import { Globe, Store, Pencil, Trash2, Plus } from "lucide-react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 interface Coupon {
   code: string;
@@ -97,12 +98,20 @@ export default function CouponManagement() {
           <select
             value={scopeFilter}
             onChange={(e) => setScopeFilter(e.target.value as any)}
-            className="bg-white border border-gray-200 hover:border-gray-300 text-gray-650 text-xs font-bold py-1.5 px-3 rounded-lg focus:outline-none cursor-pointer transition-colors"
+            className="bg-white border border-gray-200 hover:border-gray-300 text-gray-655 text-xs font-bold py-1.5 px-3 rounded-lg focus:outline-none cursor-pointer transition-colors"
           >
             <option value="all">All Scopes</option>
             <option value="global">Platform-wide</option>
             <option value="vendor">Seller-specific</option>
           </select>
+
+          <Link
+            href="/admin/marketing/create"
+            className="flex items-center justify-center gap-1.5 bg-[#0F4C81] hover:bg-[#0C447C] text-white font-bold py-1.5 px-3.5 rounded-lg text-xs transition-colors shadow-3xs cursor-pointer h-[32px]"
+          >
+            <Plus className="size-3.5" />
+            <span>Create Coupon</span>
+          </Link>
         </div>
       </div>
 
