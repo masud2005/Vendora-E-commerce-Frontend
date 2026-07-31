@@ -2,50 +2,104 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Pagination from "@/components/shared/Pagination";
 import toast from "react-hot-toast";
-import { ChevronDown, Eye, PencilLine, CircleCheckBig, XCircle } from "lucide-react";
+import { ChevronDown, Eye, PencilLine, CircleCheckBig, XCircle, Search, Check } from "lucide-react";
 import { ADMIN_PRODUCTS } from "@/constants/adminProducts";
 
 const sellerOptions = ["All", "TechTrend Solutions", "AudioPhile Global", "SmartHome Direct"];
 const statusOptions = ["All", "PENDING", "APPROVED"];
 
+/* ── Reusable custom dropdown ── */
+interface DropdownFilterProps {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (value: string) => void;
+}
+
+function DropdownFilter({ label, value, options, onChange }: DropdownFilterProps) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
+  const displayValue = value === "All" ? label : value;
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className={`flex items-center gap-2 rounded-lg border px-3.5 py-2 text-sm font-medium shadow-2xs transition-all duration-200 outline-none min-w-36
+          ${open || value !== "All"
+            ? "border-[#0F4C81] bg-[#0F4C81]/5 text-[#0F4C81]"
+            : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+          }`}
+      >
+        <span className="flex-1 text-left truncate">{displayValue}</span>
+        <ChevronDown
+          className={`size-4 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {/* Popup */}
+      <div
+        className={`absolute right-0 top-full z-50 mt-2 min-w-44 origin-top-right rounded-xl border border-gray-100 bg-white shadow-lg transition-all duration-200
+          ${open ? "scale-100 opacity-100 pointer-events-auto" : "scale-95 opacity-0 pointer-events-none"}`}
+        style={{ transformOrigin: "top right" }}
+      >
+        <div className="p-1.5">
+          {options.map((option) => {
+            const isActive = value === option;
+            return (
+              <button
+                key={option}
+                type="button"
+                onClick={() => { onChange(option); setOpen(false); }}
+                className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150
+                  ${isActive
+                    ? "bg-[#0F4C81]/8 text-[#0F4C81]"
+                    : "text-gray-700 hover:bg-gray-50"
+                  }`}
+              >
+                <span>{option === "All" ? `All ${label}s` : option}</span>
+                {isActive && <Check className="size-4 shrink-0" />}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Main Table ── */
 export default function ProductManagementTable() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [sellerFilter, setSellerFilter] = useState("All");
-  const [selectedIds, setSelectedIds] = useState<number[]>(ADMIN_PRODUCTS.map((product) => product.id));
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProducts = ADMIN_PRODUCTS.filter((product) => {
+    const query = searchQuery.toLowerCase().trim();
+    const matchesSearch =
+      !query ||
+      product.title.toLowerCase().includes(query) ||
+      product.seller.toLowerCase().includes(query);
     const matchesStatus = statusFilter === "All" || product.status === statusFilter;
     const matchesSeller = sellerFilter === "All" || product.seller === sellerFilter;
-    return matchesStatus && matchesSeller;
+    return matchesSearch && matchesStatus && matchesSeller;
   });
-
-  const visibleSelectedCount = filteredProducts.filter((product) => selectedIds.includes(product.id)).length;
-  const allVisibleSelected = filteredProducts.length > 0 && filteredProducts.every((product) => selectedIds.includes(product.id));
-  const someVisibleSelected = visibleSelectedCount > 0 && !allVisibleSelected;
-
-  const toggleProduct = (productId: number) => {
-    setSelectedIds((current) =>
-      current.includes(productId)
-        ? current.filter((id) => id !== productId)
-        : [...current, productId]
-    );
-  };
-
-  const toggleAllVisible = () => {
-    setSelectedIds((current) => {
-      if (allVisibleSelected) {
-        return current.filter((id) => !filteredProducts.some((product) => product.id === id));
-      }
-
-      const nextIds = new Set(current);
-      filteredProducts.forEach((product) => nextIds.add(product.id));
-      return Array.from(nextIds);
-    });
-  };
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -54,64 +108,44 @@ export default function ProductManagementTable() {
 
   return (
     <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 sm:p-5 shadow-3xs select-none text-left">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="relative min-w-45">
-            <select
-              value={statusFilter}
-              onChange={(event) => setStatusFilter(event.target.value)}
-              className="w-full appearance-none rounded border border-gray-300 bg-white px-3 py-2 pr-9 text-sm font-medium text-gray-700 shadow-2xs outline-none transition-colors focus:border-[#0F4C81]"
-            >
-              {statusOptions.map((option) => (
-                <option key={option} value={option}>
-                  Status: {option}
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-gray-500" />
-          </div>
 
-          <div className="relative min-w-45">
-            <select
-              value={sellerFilter}
-              onChange={(event) => setSellerFilter(event.target.value)}
-              className="w-full appearance-none rounded border border-gray-300 bg-white px-3 py-2 pr-9 text-sm font-medium text-gray-700 shadow-2xs outline-none transition-colors focus:border-[#0F4C81]"
-            >
-              {sellerOptions.map((option) => (
-                <option key={option} value={option}>
-                  Seller: {option}
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-gray-500" />
-          </div>
+      {/* ── Toolbar ── */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
+        {/* Left — Search */}
+        <div className="relative w-full sm:max-w-72">
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search product or seller…"
+            className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2 pl-9 pr-4 text-sm font-medium text-gray-700 placeholder:text-gray-400 shadow-2xs outline-none transition-all duration-200 focus:border-[#0F4C81] focus:bg-white focus:ring-2 focus:ring-[#0F4C81]/10"
+          />
         </div>
 
-        <div className="text-xs sm:text-sm font-medium text-gray-500">
-          Showing 1-10 of 124 results
+        {/* Right — Filters */}
+        <div className="flex items-center gap-2">
+          <DropdownFilter
+            label="Status"
+            value={statusFilter}
+            options={statusOptions}
+            onChange={setStatusFilter}
+          />
+          <DropdownFilter
+            label="Seller"
+            value={sellerFilter}
+            options={sellerOptions}
+            onChange={setSellerFilter}
+          />
         </div>
       </div>
 
+      {/* ── Table ── */}
       <div className="overflow-x-auto rounded-lg border border-gray-200 custom-scrollbar">
         <table className="min-w-245 w-full text-left">
           <thead>
             <tr className="border-b border-gray-200 bg-[#DDE5F7] text-[11px] font-bold uppercase tracking-wider text-gray-700">
-              <th className="w-12 px-4 py-3">
-                <label className="inline-flex cursor-pointer items-center">
-                  <input
-                    type="checkbox"
-                    checked={allVisibleSelected}
-                    ref={(input) => {
-                      if (input) {
-                        input.indeterminate = someVisibleSelected;
-                      }
-                    }}
-                    onChange={toggleAllVisible}
-                    className="size-4 rounded border-gray-300 text-[#0F4C81] focus:ring-[#0F4C81]"
-                    aria-label="Select all visible products"
-                  />
-                </label>
-              </th>
               <th className="px-4 py-3">Product Details</th>
               <th className="px-4 py-3">Seller</th>
               <th className="px-4 py-3">Category</th>
@@ -120,21 +154,21 @@ export default function ProductManagementTable() {
               <th className="px-4 py-3 text-right">Moderation &amp; Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 bg-white">
-            {filteredProducts.map((product) => {
-              const isSelected = selectedIds.includes(product.id);
-
-              return (
-                <tr key={product.id} className={`transition-colors ${isSelected ? "bg-blue-50/35" : "hover:bg-gray-50/50"}`}>
-                  <td className="px-4 py-4 align-middle">
-                    <input
-                      type="checkbox"
-                      checked={isSelected}
-                      onChange={() => toggleProduct(product.id)}
-                      className="size-4 rounded border-gray-300 text-[#0F4C81] focus:ring-[#0F4C81]"
-                      aria-label={`Select ${product.title}`}
-                    />
-                  </td>
+          <tbody className="divide-y divide-gray-200">
+            {filteredProducts.length === 0 ? (
+              <tr>
+                <td colSpan={6} className="px-4 py-10 text-center text-sm text-gray-400 font-medium">
+                  No products match your search or filters.
+                </td>
+              </tr>
+            ) : (
+              filteredProducts.map((product, index) => (
+                <tr
+                  key={product.id}
+                  className={`transition-colors duration-150 hover:bg-blue-50/40 ${
+                    index % 2 === 0 ? "bg-white" : "bg-gray-50/60"
+                  }`}
+                >
                   <td className="px-4 py-4 align-middle">
                     <div className="flex items-center gap-3">
                       <Image
@@ -156,7 +190,11 @@ export default function ProductManagementTable() {
                     </div>
                   </td>
                   <td className="px-4 py-4 align-middle text-sm font-medium text-[#0F4C81]">
-                    <button type="button" onClick={() => toast.success(`Opening seller profile for ${product.seller}`)} className="text-left hover:underline">
+                    <button
+                      type="button"
+                      onClick={() => toast.success(`Opening seller profile for ${product.seller}`)}
+                      className="text-left hover:underline"
+                    >
                       {product.seller}
                     </button>
                   </td>
@@ -215,12 +253,13 @@ export default function ProductManagementTable() {
                     </div>
                   </td>
                 </tr>
-              );
-            })}
+              ))
+            )}
           </tbody>
         </table>
       </div>
-      
+
+      {/* ── Pagination ── */}
       <div className="flex items-center justify-between pt-2">
         <Pagination currentPage={currentPage} totalPages={13} onPageChange={handlePageChange} />
       </div>
