@@ -54,7 +54,7 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
     { title: "Overview", href: "/admin", icon: LayoutGrid },
     { title: "User Management", href: "/admin/userManagement", icon: Users },
     { title: "Seller Management", href: "/admin/sellerMangement", icon: Store },
-    { title: "Catalog", href: "/admin/catalog", icon: Shapes },
+    { title: "Product Management", href: "/admin/productManagement", icon: Package },
     { title: "Marketing", href: "/admin/marketing", icon: Megaphone },
     { title: "Financials", href: "/admin/financials", icon: Banknote },
     { title: "Analytics", href: "/admin/analytics", icon: LineChart },
