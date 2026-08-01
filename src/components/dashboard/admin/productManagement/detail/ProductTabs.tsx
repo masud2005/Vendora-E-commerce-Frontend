@@ -1,18 +1,88 @@
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { CircleAlert, Truck } from "lucide-react";
+import { CircleAlert, Truck, ShieldCheck } from "lucide-react";
 import type { AdminProduct } from "@/constants/adminProducts";
 import { StarRow } from "./StarRow";
 
 interface ProductTabsProps {
   product: AdminProduct;
   activeTab: "product" | "reviews" | "qa" | "shipping";
+  isEditing?: boolean;
+  draft?: Record<string, string>;
+  updateField?: (field: "description" | "title" | "sku" | "price" | "oldPrice", value: string) => void;
+  setActiveTab: (tab: "product" | "reviews" | "qa" | "shipping") => void;
 }
 
-export default function ProductTabs({ product, activeTab }: ProductTabsProps) {
+export default function ProductTabs({ product, activeTab, setActiveTab, isEditing, draft, updateField }: ProductTabsProps) {
+  const tabsNav = (
+    <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-gray-500 mb-5">
+      <button
+        type="button"
+        onClick={() => setActiveTab("product")}
+        className={`border-b-2 pb-2 transition-colors ${activeTab === "product" ? "border-[#0F4C81] text-[#0F4C81]" : "border-transparent hover:text-gray-700"}`}
+      >
+        Product Information
+      </button>
+      <button
+        type="button"
+        onClick={() => setActiveTab("reviews")}
+        className={`border-b-2 pb-2 transition-colors ${activeTab === "reviews" ? "border-[#0F4C81] text-[#0F4C81]" : "border-transparent hover:text-gray-700"}`}
+      >
+        Customer Reviews ({product.reviews.toLocaleString()})
+      </button>
+      <button
+        type="button"
+        onClick={() => setActiveTab("qa")}
+        className={`border-b-2 pb-2 transition-colors ${activeTab === "qa" ? "border-[#0F4C81] text-[#0F4C81]" : "border-transparent hover:text-gray-700"}`}
+      >
+        Q&amp;A
+      </button>
+      <button
+        type="button"
+        onClick={() => setActiveTab("shipping")}
+        className={`border-b-2 pb-2 transition-colors ${activeTab === "shipping" ? "border-[#0F4C81] text-[#0F4C81]" : "border-transparent hover:text-gray-700"}`}
+      >
+        Shipping &amp; Returns
+      </button>
+    </div>
+  );
+
+  if (activeTab === "product") {
+    return (
+      <div className="rounded border border-gray-200 bg-white p-5 shadow-3xs">
+        {tabsNav}
+        <div className="space-y-6">
+          <section className="space-y-3">
+            <h2 className="text-lg font-bold text-gray-900">Detailed Description</h2>
+            {isEditing && draft && updateField ? (
+              <textarea
+                value={draft.description}
+                onChange={(event) => updateField("description", event.target.value)}
+                className="min-h-40 w-full rounded border border-gray-300 bg-white px-4 py-3 text-sm text-gray-700 shadow-2xs outline-none transition-colors focus:border-[#0F4C81]"
+              />
+            ) : (
+              <div className="prose prose-sm max-w-none text-gray-600" dangerouslySetInnerHTML={{ __html: product.description }} />
+            )}
+          </section>
+
+          <section className="rounded border border-blue-100 bg-blue-50/40 p-4">
+            <div className="flex items-start gap-3">
+              <ShieldCheck className="mt-0.5 size-5 text-[#0F4C81]" />
+              <div>
+                <h3 className="text-sm font-bold text-gray-900">Warranty &amp; Returns</h3>
+                <p className="mt-1 text-sm leading-6 text-gray-600">{product.warranty}</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+
   if (activeTab === "reviews") {
     return (
       <div className="space-y-4 rounded border border-gray-200 bg-white p-5 shadow-3xs">
+        {tabsNav}
         <div className="flex items-center justify-between gap-4">
           <div>
             <h2 className="text-lg font-bold text-gray-900">Customer Reviews</h2>
@@ -50,6 +120,7 @@ export default function ProductTabs({ product, activeTab }: ProductTabsProps) {
   if (activeTab === "qa") {
     return (
       <div className="rounded border border-gray-200 bg-white p-5 shadow-3xs">
+        {tabsNav}
         <h2 className="text-lg font-bold text-gray-900">Q&amp;A</h2>
         <p className="mt-2 text-sm text-gray-600">Questions from buyers can be reviewed and answered from here.</p>
         <button type="button" onClick={() => toast.success("Opening buyer questions")} className="mt-4 rounded border border-[#0F4C81] px-4 py-2 text-sm font-bold text-[#0F4C81] transition-colors hover:bg-blue-50">
@@ -62,6 +133,7 @@ export default function ProductTabs({ product, activeTab }: ProductTabsProps) {
   if (activeTab === "shipping") {
     return (
       <div className="rounded border border-gray-200 bg-white p-5 shadow-3xs">
+        {tabsNav}
         <div className="space-y-4 text-sm text-gray-600">
           <div className="flex items-start gap-3">
             <Truck className="mt-0.5 size-5 text-[#0F4C81]" />
@@ -81,6 +153,7 @@ export default function ProductTabs({ product, activeTab }: ProductTabsProps) {
 
   return (
     <div className="rounded border border-gray-200 bg-white p-5 shadow-3xs">
+      {tabsNav}
       <div className="flex items-center justify-between gap-4">
         <div>
           <h2 className="text-lg font-bold text-gray-900">Frequently Bought Together</h2>

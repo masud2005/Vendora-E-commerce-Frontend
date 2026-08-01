@@ -24,8 +24,13 @@ const defaults: FormState = {
   colors: [], sizes: [], images: [],
 };
 
-export default function AddProductForm() {
-  const [form, setForm] = useState<FormState>(defaults);
+interface AddProductFormProps {
+  initialData?: FormState;
+  isEditMode?: boolean;
+}
+
+export default function AddProductForm({ initialData, isEditMode = false }: AddProductFormProps) {
+  const [form, setForm] = useState<FormState>(initialData || defaults);
   const patch = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setForm((p) => ({ ...p, [k]: v }));
 
@@ -35,7 +40,7 @@ export default function AddProductForm() {
     if (!form.category) return toast.error("Category is required");
     if (!form.seller) return toast.error("Seller is required");
     if (!form.images.length) return toast.error("Upload at least one image");
-    toast.success("Product published!");
+    toast.success(isEditMode ? "Product updated successfully!" : "Product published!");
   };
 
   return (
@@ -50,13 +55,13 @@ export default function AddProductForm() {
             <span className="text-gray-300">/</span>
             <Link href="/admin/productManagement" className="hover:text-[#0F4C81] transition-colors">Products</Link>
             <span className="text-gray-300">/</span>
-            <span className="text-[#0F4C81]">New Product</span>
+            <span className="text-[#0F4C81]">{isEditMode ? "Edit Product" : "New Product"}</span>
           </nav>
           <h1 className="truncate text-xl font-extrabold tracking-tight text-gray-900">
-            Create New Product
+            {isEditMode ? "Edit Product" : "Create New Product"}
           </h1>
-          <p className="text-xs text-gray-400 font-medium">
-            Fill in all <span className="text-rose-500 font-bold">*</span> required fields and upload at least one image.
+          <p className="text-xs font-medium text-gray-400">
+            {isEditMode ? "Update product details and save changes." : "Fill in all"} {isEditMode ? "" : <span className="font-bold text-rose-500">*</span>} {isEditMode ? "" : "required fields and upload at least one image."}
           </p>
         </div>
 
@@ -79,7 +84,7 @@ export default function AddProductForm() {
             onClick={handlePublish}
             className="inline-flex items-center gap-1.5 rounded bg-[#0F4C81] px-4 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-[#0d3f6e] active:scale-[0.98]"
           >
-            <Send className="size-3.5" /> Publish Product
+            <Send className="size-3.5" /> {isEditMode ? "Save Changes" : "Publish Product"}
           </button>
         </div>
       </div>

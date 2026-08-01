@@ -63,14 +63,13 @@ export default function ProductManagementDetail({ product, initialEditing }: Pro
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={() => setIsEditing((current) => !current)}
+          <Link
+            href={`/admin/productManagement/edit/${product.id}`}
             className="inline-flex items-center gap-2 rounded border border-[#0F4C81] bg-white px-4 py-2 text-sm font-bold text-[#0F4C81] shadow-2xs transition-colors hover:bg-blue-50 cursor-pointer"
           >
             <Edit3 className="size-4" />
-            <span>{isEditing ? "Exit Edit Mode" : "Edit Product"}</span>
-          </button>
+            <span>Edit Full Product</span>
+          </Link>
           <button
             type="button"
             onClick={() => toast.success("Opening moderation notes...")}
@@ -82,7 +81,7 @@ export default function ProductManagementDetail({ product, initialEditing }: Pro
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="space-y-4">
           <ProductGallery
             product={product}
@@ -90,6 +89,8 @@ export default function ProductManagementDetail({ product, initialEditing }: Pro
             setActiveImage={setActiveImage}
             currentImage={currentImage}
           />
+        </div>
+        <div className="space-y-4">
           <ProductInfo
             product={product}
             isEditing={isEditing}
@@ -104,9 +105,17 @@ export default function ProductManagementDetail({ product, initialEditing }: Pro
             setActiveTab={setActiveTab}
           />
         </div>
-        <div className="space-y-4">
-          <ProductTabs product={product} activeTab={activeTab} />
-        </div>
+      </div>
+
+      <div className="mt-8">
+        <ProductTabs 
+          product={product} 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab}
+          isEditing={isEditing}
+          draft={draft}
+          updateField={updateField}
+        />
       </div>
     </div>
   );

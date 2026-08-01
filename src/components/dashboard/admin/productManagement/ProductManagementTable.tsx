@@ -228,7 +228,7 @@ export default function ProductManagementTable() {
                         <Eye className="size-5" />
                       </Link>
                       <Link
-                        href={`/admin/productManagement/${product.id}?mode=edit`}
+                        href={`/admin/productManagement/edit/${product.id}`}
                         className="rounded p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 cursor-pointer"
                         aria-label={`Edit ${product.title}`}
                       >
