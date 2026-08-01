@@ -73,7 +73,18 @@ export default function DashboardMobileSidebar({
                   }`}
                 >
                   <Icon className={`h-4.5 w-4.5 shrink-0 ${isActive ? "text-[#065F46]" : "text-gray-400"}`} />
-                  {item.title}
+                  <span className="flex-1 truncate">{item.title}</span>
+
+                  {/* Optional Badge element sitting at the right side */}
+                  {item.badge !== undefined && (
+                    <span className={`inline-flex items-center justify-center text-[9px] font-black leading-none px-1.5 py-0.5 rounded-full shrink-0 select-none ${
+                      item.badgeType === "danger"
+                        ? "bg-red-500 text-white"
+                        : "bg-amber-100 text-amber-800"
+                    }`}>
+                      {item.badge}
+                    </span>
+                  )}
                 </Link>
               );
             })}

@@ -59,11 +59,22 @@ export default function DashboardSidebarContent({ userRole }: DashboardSidebarCo
                 title={item.title}
               >
                 <Icon className={`size-5 lg:size-4.5 shrink-0 ${isActive ? "text-[#065F46]" : "text-gray-500"}`} />
-                <span className="hidden lg:inline text-xs font-bold truncate">{item.title}</span>
+                <span className="hidden lg:inline text-xs font-bold truncate flex-1">{item.title}</span>
                 {/* Tablet tiny text label under the icon */}
                 <span className="inline lg:hidden text-[9px] font-bold truncate tracking-tighter leading-none mt-0.5">
                   {item.title}
                 </span>
+
+                {/* Optional Badge element sitting at the right side */}
+                {item.badge !== undefined && (
+                  <span className={`hidden lg:inline-flex items-center justify-center text-[9px] font-black leading-none px-1.5 py-0.5 rounded-full shrink-0 select-none ${
+                    item.badgeType === "danger"
+                      ? "bg-red-500 text-white"
+                      : "bg-amber-100 text-amber-800"
+                  }`}>
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             );
           })}
