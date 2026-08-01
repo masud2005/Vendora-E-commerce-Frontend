@@ -127,12 +127,12 @@ export default function CreateCouponPage() {
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
                     placeholder="e.g., SUMMER50"
-                    className="w-full pl-3 pr-24 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900 uppercase"
+                    className="w-full pl-3 pr-24 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900 uppercase"
                   />
                   <button
                     type="button"
                     onClick={handleGenerateCode}
-                    className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-2.5 py-1.5 rounded-md text-[10px] transition-colors cursor-pointer border border-gray-200"
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-2.5 py-1.5 rounded text-[10px] transition-colors cursor-pointer border border-gray-200"
                   >
                     <RefreshCw className="size-3 text-gray-500" />
                     <span>Generate</span>
@@ -153,7 +153,7 @@ export default function CreateCouponPage() {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Short description for customers"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                 />
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function CreateCouponPage() {
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="Context for other administrators (not visible to users)..."
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900 h-20 resize-none"
+                className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900 h-20 resize-none"
               />
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function CreateCouponPage() {
                 <select
                   value={discountType}
                   onChange={(e) => setDiscountType(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-bold text-gray-900 cursor-pointer"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-bold text-gray-900 cursor-pointer"
                 >
                   <option>Percentage</option>
                   <option>Fixed Amount</option>
@@ -208,7 +208,7 @@ export default function CreateCouponPage() {
                     value={discountValue}
                     onChange={(e) => setDiscountValue(e.target.value)}
                     placeholder="0"
-                    className="w-full pl-3 pr-8 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                    className="w-full pl-3 pr-8 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                   />
                   <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">
                     {discountType === "Percentage" ? "%" : "$"}
@@ -238,7 +238,7 @@ export default function CreateCouponPage() {
                   value={minOrderValue}
                   onChange={(e) => setMinOrderValue(e.target.value)}
                   placeholder="$0.00"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                 />
               </div>
 
@@ -252,7 +252,7 @@ export default function CreateCouponPage() {
                   value={maxDiscountValue}
                   onChange={(e) => setMaxDiscountValue(e.target.value)}
                   placeholder="No limit"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                 />
               </div>
 
@@ -266,7 +266,7 @@ export default function CreateCouponPage() {
                   value={totalUsageLimit}
                   onChange={(e) => setTotalUsageLimit(e.target.value)}
                   placeholder="e.g., 500"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                 />
               </div>
 
@@ -280,7 +280,7 @@ export default function CreateCouponPage() {
                   value={userUsageLimit}
                   onChange={(e) => setUserUsageLimit(e.target.value)}
                   placeholder="1"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
+                  className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-900"
                 />
               </div>
             </div>
@@ -329,7 +329,7 @@ export default function CreateCouponPage() {
                 type="datetime-local"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-800 cursor-pointer"
+                className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-800 cursor-pointer"
               />
             </div>
 
@@ -354,7 +354,7 @@ export default function CreateCouponPage() {
                 value={endDate}
                 disabled={noExpiry}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-800 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-full px-3 py-2 border border-gray-200 rounded text-xs bg-white focus:outline-none focus:border-[#0F4C81] font-semibold text-gray-800 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               />
             </div>
           </div>
@@ -372,7 +372,7 @@ export default function CreateCouponPage() {
               {/* Option 1: Platform-wide */}
               <div
                 onClick={() => setScope("platform")}
-                className={`p-3 rounded-lg border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
+                className={`p-3 rounded border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
                   scope === "platform"
                     ? "border-[#0F4C81] bg-blue-50/30"
                     : "border-gray-200 hover:bg-gray-50/50"
@@ -394,7 +394,7 @@ export default function CreateCouponPage() {
               {/* Option 2: Specific Sellers */}
               <div
                 onClick={() => setScope("sellers")}
-                className={`p-3 rounded-lg border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
+                className={`p-3 rounded border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
                   scope === "sellers"
                     ? "border-[#0F4C81] bg-blue-50/30"
                     : "border-gray-200 hover:bg-gray-50/50"
@@ -416,7 +416,7 @@ export default function CreateCouponPage() {
               {/* Option 3: Specific Categories */}
               <div
                 onClick={() => setScope("categories")}
-                className={`p-3 rounded-lg border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
+                className={`p-3 rounded border cursor-pointer transition-all flex items-start gap-2.5 text-left select-none ${
                   scope === "categories"
                     ? "border-[#0F4C81] bg-blue-50/30"
                     : "border-gray-200 hover:bg-gray-50/50"

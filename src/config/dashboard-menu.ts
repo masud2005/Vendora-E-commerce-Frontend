@@ -19,13 +19,20 @@ import {
   Megaphone,
   Banknote,
   LineChart,
-  Headset
+  Headset,
+  ClipboardList,
+  Boxes,
+  MapPin,
+  History,
+  Headphones
 } from "lucide-react";
 
 export interface MenuItem {
   title: string;
   href: string;
   icon: any;
+  badge?: string | number;
+  badgeType?: "danger" | "warning"; // danger = red bubble, warning = beige pill
 }
 
 export const roleMenuConfigs: Record<string, MenuItem[]> = {
@@ -62,11 +69,15 @@ export const roleMenuConfigs: Record<string, MenuItem[]> = {
     { title: "Settings", href: "/admin/settings", icon: Settings }
   ],
   
-  // ৪. Delivery Rider এর জন্য ডেমো মেনু:
+  // ৪. Delivery Rider এর জন্য ইমেজ অনুযায়ী মেনু ও আইকন সেটআপ:
   rider: [
-    { title: "Deliveries Map", href: "/rider", icon: LayoutGrid },
-    { title: "Active Orders", href: "/rider/active", icon: Bike },
-    { title: "Payout History", href: "/rider/payouts", icon: DollarSign },
-    { title: "Rider Settings", href: "/rider/settings", icon: Settings }
+    { title: "Overview", href: "/rider", icon: LayoutGrid },
+    { title: "Assigned Orders", href: "/rider/assigned", icon: ClipboardList, badge: 5, badgeType: "danger" },
+    { title: "Pickup Queue", href: "/rider/pickup", icon: Boxes },
+    { title: "Live Tracking", href: "/rider/tracking", icon: MapPin, badge: "Beta", badgeType: "warning" },
+    { title: "Delivery History", href: "/rider/history", icon: History },
+    { title: "Earnings", href: "/rider/earnings", icon: Wallet },
+    { title: "COD Collection", href: "/rider/cod", icon: Banknote },
+    { title: "Support Chat", href: "/rider/support", icon: Headphones }
   ]
 };

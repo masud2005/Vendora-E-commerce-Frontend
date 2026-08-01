@@ -1,11 +1,44 @@
 "use client";
 
-export default function RiderDashboardPage() {
+import RecentActivity from "@/components/dashboard/admin/overview/RecentActivity";
+import ActiveRoute from "@/components/dashboard/rider/overview/ActiveRoute";
+import PriorityAlertsAndScore from "@/components/dashboard/rider/overview/PriorityAlertsAndScore";
+import RiderHeader from "@/components/dashboard/rider/overview/RiderHeader";
+import RiderStats from "@/components/dashboard/rider/overview/RiderStats";
+import WeeklyPerformanceChart from "@/components/dashboard/rider/overview/WeeklyPerformanceChart";
+
+
+
+export default function RiderDashboardContent() {
   return (
-    <div className="h-full flex items-center justify-center bg-white border border-gray-150 rounded-lg p-8">
-      <h1 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
-        Rider Dashboard
-      </h1>
+    <div className="space-y-6 w-full pb-12 font-sans select-none text-left">
+      
+      {/* 1. Header with Breadcrumbs, Title and Scan Parcel/View Route buttons */}
+      <RiderHeader />
+
+      {/* 2. Metric stats cards row (5 Cards) */}
+      <RiderStats />
+
+      {/* 3. Performance Graph & Alerts Row (2:1 Column Grid layout) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="lg:col-span-2">
+          <WeeklyPerformanceChart />
+        </div>
+        <div className="lg:col-span-1">
+          <PriorityAlertsAndScore />
+        </div>
+      </div>
+
+      {/* 4. Active Route & Recent Activity Row (2:1 Column Grid layout) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="lg:col-span-2">
+          <ActiveRoute />
+        </div>
+        <div className="lg:col-span-1">
+          <RecentActivity />
+        </div>
+      </div>
+
     </div>
   );
 }
