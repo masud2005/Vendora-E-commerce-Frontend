@@ -5,7 +5,7 @@ import { UploadCloud, X, GripVertical, ImagePlus, AlertCircle } from "lucide-rea
 
 export interface UploadedImage {
   id: string;
-  file: File;
+  file?: File;
   preview: string;
 }
 
@@ -198,7 +198,7 @@ export default function ImageUploader({ images, onChange, maxImages = 8 }: Image
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={img.preview}
-                alt={img.file.name}
+                alt={img.file?.name || `Image ${index + 1}`}
                 className="h-full w-full object-cover"
                 draggable={false}
               />
