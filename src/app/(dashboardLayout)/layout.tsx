@@ -42,7 +42,7 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="flex flex-col h-screen w-full bg-brand-primary-50 font-sans overflow-hidden">
+    <div className="fixed inset-0 flex flex-col w-full bg-brand-primary-50 font-sans overflow-hidden">
       
       {/* 1. Dynamic header navbar (Top level, spans full width) */}
       <Navbar
