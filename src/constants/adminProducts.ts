@@ -27,9 +27,7 @@ export type AdminProduct = {
   images: string[];
   colors: { name: string; hex: string }[];
   sizes: string[];
-  highlights: string[];
   description: string;
-  attributes: { label: string; value: string }[];
   warranty: string;
   bundle: { title: string; price: string; image: string }[];
   reviewsData: ProductReview[];
@@ -64,21 +62,10 @@ export const ADMIN_PRODUCTS: AdminProduct[] = [
       { name: "Ocean", hex: "#1E3A8A" }
     ],
     sizes: ["One Size"],
-    highlights: [
-      "Industry-leading tactile switches for precision typing and gaming.",
-      "Aircraft-grade aluminum top plate with premium low-profile keycaps.",
-      "Hot-swappable sockets for easy switch upgrades.",
-      "Wireless + wired hybrid connectivity with long battery life."
-    ],
+    
     description:
       "The Apex TKL is built for creators and power users who want compact performance without giving up comfort. Its hot-swappable design, durable aluminum frame, and tuned stabilizers deliver a quieter, more controlled typing experience for work or play.",
-    attributes: [
-      { label: "Brand", value: "Apex" },
-      { label: "Material", value: "Aluminum, PBT Keycaps" },
-      { label: "Origin", value: "Designed in USA, Assembled in VN" },
-      { label: "Weight", value: "980g" },
-      { label: "Dimensions", value: "355mm x 135mm x 40mm" }
-    ],
+    
     warranty: "Includes a 2-year manufacturer warranty and 30-day hassle-free return policy if the item is unused and in original condition.",
     bundle: [
       {
@@ -146,21 +133,10 @@ export const ADMIN_PRODUCTS: AdminProduct[] = [
       { name: "Royal Blue", hex: "#1D4ED8" }
     ],
     sizes: ["One Size"],
-    highlights: [
-      "Hybrid noise cancellation tuned for travel and focused work.",
-      "Plush memory foam cushions with all-day comfort.",
-      "Up to 45 hours battery life with quick charge support.",
-      "Bluetooth 5.3 and wired listening support."
-    ],
+    
     description:
       "The QuietFlow Pro is designed for users who want immersive audio and long wear comfort. The balanced sound profile, adaptive ANC, and premium materials make it a reliable everyday headset for commuting, meetings, and entertainment.",
-    attributes: [
-      { label: "Brand", value: "QuietFlow" },
-      { label: "Material", value: "Brushed Aluminum, Leather" },
-      { label: "Origin", value: "Designed in USA, Assembled in PRC" },
-      { label: "Weight", value: "254g (Lightweight)" },
-      { label: "Dimensions", value: "190mm x 170mm x 80mm" }
-    ],
+    
     warranty: "Includes a 2-year manufacturer warranty and 30-day hassle-free return policy if the item is unused and in original condition.",
     bundle: [
       {
@@ -227,21 +203,10 @@ export const ADMIN_PRODUCTS: AdminProduct[] = [
       { name: "Cobalt", hex: "#1D4ED8" }
     ],
     sizes: ["One Size"],
-    highlights: [
-      "Smart home hub with easy setup and multi-device automation.",
-      "Energy-efficient scheduling and remote control support.",
-      "Works with popular ecosystems and voice assistants.",
-      "Compact form factor for modern interiors."
-    ],
+    
     description:
       "The ThermoSmart Hub V3 gives sellers a compact, reliable smart-home control center. It is built for stable connectivity, simple pairing, and practical automation scenarios.",
-    attributes: [
-      { label: "Brand", value: "ThermoSmart" },
-      { label: "Material", value: "Polycarbonate, Aluminum" },
-      { label: "Origin", value: "Designed in USA, Assembled in VN" },
-      { label: "Weight", value: "254g" },
-      { label: "Dimensions", value: "105mm x 105mm x 26mm" }
-    ],
+    
     warranty: "Includes a 1-year manufacturer warranty and a 30-day return policy for unused items.",
     bundle: [
       {

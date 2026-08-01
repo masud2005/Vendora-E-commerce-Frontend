@@ -28,8 +28,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-F9FAFB! overflow-x-hidden">
+      <body className="min-h-full flex flex-col bg-F9FAFB! overflow-x-hidden" suppressHydrationWarning>
         <Toaster position="top-center" reverseOrder={false} />
         {children}
       </body>

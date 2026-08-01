@@ -40,7 +40,7 @@ function DropdownFilter({ label, value, options, onChange }: DropdownFilterProps
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className={`flex items-center gap-2 rounded-lg border px-3.5 py-2 text-sm font-medium shadow-2xs transition-all duration-200 outline-none min-w-36
+        className={`flex items-center gap-2 rounded border px-3.5 py-2 text-sm font-medium shadow-2xs transition-all duration-200 outline-none min-w-36
           ${open || value !== "All"
             ? "border-[#0F4C81] bg-[#0F4C81]/5 text-[#0F4C81]"
             : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50"
@@ -54,7 +54,7 @@ function DropdownFilter({ label, value, options, onChange }: DropdownFilterProps
 
       {/* Popup */}
       <div
-        className={`absolute right-0 top-full z-50 mt-2 min-w-44 origin-top-right rounded-xl border border-gray-100 bg-white shadow-lg transition-all duration-200
+        className={`absolute right-0 top-full z-50 mt-2 min-w-44 origin-top-right rounded border border-gray-100 bg-white shadow-lg transition-all duration-200
           ${open ? "scale-100 opacity-100 pointer-events-auto" : "scale-95 opacity-0 pointer-events-none"}`}
         style={{ transformOrigin: "top right" }}
       >
@@ -66,7 +66,7 @@ function DropdownFilter({ label, value, options, onChange }: DropdownFilterProps
                 key={option}
                 type="button"
                 onClick={() => { onChange(option); setOpen(false); }}
-                className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150
+                className={`flex w-full items-center justify-between gap-3 rounded px-3 py-2 text-sm font-medium transition-colors duration-150
                   ${isActive
                     ? "bg-[#0F4C81]/8 text-[#0F4C81]"
                     : "text-gray-700 hover:bg-gray-50"
@@ -107,7 +107,7 @@ export default function ProductManagementTable() {
   };
 
   return (
-    <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 sm:p-5 shadow-3xs select-none text-left">
+    <div className="space-y-4 rounded border border-gray-200 bg-white p-4 sm:p-5 shadow-3xs select-none text-left">
 
       {/* ── Toolbar ── */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -120,7 +120,7 @@ export default function ProductManagementTable() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search product or seller…"
-            className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2 pl-9 pr-4 text-sm font-medium text-gray-700 placeholder:text-gray-400 shadow-2xs outline-none transition-all duration-200 focus:border-[#0F4C81] focus:bg-white focus:ring-2 focus:ring-[#0F4C81]/10"
+            className="w-full rounded border border-gray-200 bg-gray-50 py-2 pl-9 pr-4 text-sm font-medium text-gray-700 placeholder:text-gray-400 shadow-2xs outline-none transition-all duration-200 focus:border-[#0F4C81] focus:bg-white focus:ring-2 focus:ring-[#0F4C81]/10"
           />
         </div>
 
@@ -142,7 +142,7 @@ export default function ProductManagementTable() {
       </div>
 
       {/* ── Table ── */}
-      <div className="overflow-x-auto rounded-lg border border-gray-200 custom-scrollbar">
+      <div className="overflow-x-auto rounded border border-gray-200 custom-scrollbar">
         <table className="min-w-245 w-full text-left">
           <thead>
             <tr className="border-b border-gray-200 bg-[#DDE5F7] text-[11px] font-bold uppercase tracking-wider text-gray-700">
@@ -228,7 +228,7 @@ export default function ProductManagementTable() {
                         <Eye className="size-5" />
                       </Link>
                       <Link
-                        href={`/admin/productManagement/${product.id}?mode=edit`}
+                        href={`/admin/productManagement/edit/${product.id}`}
                         className="rounded p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 cursor-pointer"
                         aria-label={`Edit ${product.title}`}
                       >

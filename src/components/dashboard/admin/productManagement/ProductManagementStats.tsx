@@ -9,8 +9,8 @@ type StatCardProps = {
 
 function StatCard({ label, value, icon, iconWrapperClassName }: StatCardProps) {
   return (
-    <div className="flex items-center gap-4 rounded-lg border border-gray-200 bg-white px-4 py-4 shadow-3xs min-h-[76px]">
-      <div className={`flex size-12 shrink-0 items-center justify-center rounded-md ${iconWrapperClassName}`}>
+    <div className="flex items-center gap-4 rounded border border-gray-200 bg-white px-4 py-4 shadow-3xs min-h-[76px]">
+      <div className={`flex size-12 shrink-0 items-center justify-center rounded ${iconWrapperClassName}`}>
         {icon}
       </div>
       <div className="min-w-0">
