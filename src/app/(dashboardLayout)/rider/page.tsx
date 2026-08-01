@@ -1,11 +1,8 @@
 "use client";
 
+import React from "react";
+import RiderDashboardContent from "@/components/dashboard/rider/page";
+
 export default function RiderDashboardPage() {
-  return (
-    <div className="h-full flex items-center justify-center bg-white border border-gray-150 rounded-lg p-8">
-      <h1 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
-        Rider Dashboard
-      </h1>
-    </div>
-  );
+  return <RiderDashboardContent />;
 }
