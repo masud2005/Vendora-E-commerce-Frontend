@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+
 import { Store, MapPin, Navigation, Clock, Package, ChevronRight } from "lucide-react";
-import toast from "react-hot-toast";
+
 import Link from "next/link";
 
 interface AssignedOrder {

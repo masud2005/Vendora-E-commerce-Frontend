@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import { Store, MapPin, Navigation, Clock } from "lucide-react";
 import { AssignedOrderDetails } from "./types";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import { Landmark } from "lucide-react";
 import { AssignedOrderDetails } from "./types";
 

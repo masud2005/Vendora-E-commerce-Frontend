@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import { SlidersHorizontal, Sparkles } from "lucide-react";
 import toast from "react-hot-toast";
 

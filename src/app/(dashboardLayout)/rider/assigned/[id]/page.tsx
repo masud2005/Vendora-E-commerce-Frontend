@@ -1,10 +1,10 @@
 "use client";
 
 import React, { use } from "react";
-import OrderDetailsContent from "@/components/dashboard/rider/assignedDetails/OrderDetailsContent";
-import { AssignedOrderDetails } from "@/components/dashboard/rider/assignedDetails/types";
+import OrderDetailsContent from "@/components/dashboard/rider/assignedOrder/assignedDetails/OrderDetailsContent";
+import { AssignedOrderDetails } from "@/components/dashboard/rider/assignedOrder/assignedDetails/types";
 
-// Database representing details of all 9 orders from Figma list
+// Complete Database representing details of all 9 orders
 const ordersDb: Record<string, AssignedOrderDetails> = {
   "VD-90244": {
     id: "#VD-90244",
@@ -112,7 +112,7 @@ const ordersDb: Record<string, AssignedOrderDetails> = {
     id: "#VD-90355",
     price: 890,
     status: "In Transit",
-    statusStyle: "bg-yellow-50 text-yellow-750 border-yellow-250",
+    statusStyle: "bg-yellow-50 text-yellow-755 border-yellow-250",
     isCOD: false,
     assignedTime: "Jun 1, 09:15 AM",
     deadlineTime: "Deliver by 11:00 AM",
@@ -137,7 +137,7 @@ const ordersDb: Record<string, AssignedOrderDetails> = {
     id: "#VD-90376",
     price: 5680,
     status: "In Transit",
-    statusStyle: "bg-yellow-50 text-yellow-750 border-yellow-250",
+    statusStyle: "bg-yellow-50 text-yellow-755 border-yellow-250",
     isCOD: true,
     isExpress: true,
     assignedTime: "Jun 1, 09:20 AM",
@@ -163,7 +163,7 @@ const ordersDb: Record<string, AssignedOrderDetails> = {
     id: "#VD-90399",
     price: 2450,
     status: "In Transit",
-    statusStyle: "bg-yellow-50 text-yellow-750 border-yellow-250",
+    statusStyle: "bg-yellow-50 text-yellow-755 border-yellow-250",
     isCOD: true,
     assignedTime: "Jun 3, 08:30 AM",
     deadlineTime: "Deliver by 12:00 PM",
@@ -242,8 +242,15 @@ const ordersDb: Record<string, AssignedOrderDetails> = {
 
 export default function OrderDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
-  const orderId = resolvedParams.id;
-  const order = ordersDb[orderId] || ordersDb["VD-90244"]; // default fallback
+  
+  // Normalize parameters: remove hashes, URL encodings and upper case it to make it match accurately
+  const orderId = resolvedParams.id
+    .replace(/%23/gi, "")
+    .replace("#", "")
+    .toUpperCase()
+    .trim();
+
+  const order = ordersDb[orderId] || ordersDb["VD-90244"]; // default fallback to first if not found
 
   return <OrderDetailsContent initialOrder={order} />;
 }
