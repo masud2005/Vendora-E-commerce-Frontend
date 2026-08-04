@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+
 import { Store, MapPin, Navigation, Clock, Package, ChevronRight } from "lucide-react";
-import toast from "react-hot-toast";
+
+import Link from "next/link";
 
 interface AssignedOrder {
   id: string;
@@ -141,13 +142,13 @@ export default function AssignedOrdersList({ orders, codValueInView }: AssignedO
                 </div>
 
                 {/* Open details */}
-                <button
-                  onClick={() => toast.success(`Viewing details for assigned order ${order.id}`)}
+                <Link
+                  href={`/rider/assigned/${order.id.replace("#", "")}`}
                   className="text-xs font-black text-[#0F4C81] hover:underline cursor-pointer flex items-center gap-0.5"
                 >
                   <span>Open</span>
                   <ChevronRight className="size-3.5" />
-                </button>
+                </Link>
               </div>
 
             </div>

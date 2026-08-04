@@ -37,34 +37,8 @@ const allOrdersList: AssignedOrder[] = [
     deadline: "Deliver by 01:00 PM",
     itemsCount: "1 item(s)"
   },
-  {
-    id: "#VD-90210",
-    price: 990,
-    status: "Delivered",
-    statusStyle: "bg-emerald-50 text-emerald-700 border-emerald-150",
-    isCOD: true,
-    pickupName: "EcoHome Tech",
-    pickupLoc: "Mirpur 10",
-    dropName: "Shakil Ahmed",
-    dropLoc: "House 6, Road 2, Kazipara",
-    distance: "1.8km",
-    deadline: "Deliver by 03:00 PM",
-    itemsCount: "1 item(s)"
-  },
-  {
-    id: "#VD-90301",
-    price: 1750,
-    status: "Delivered",
-    statusStyle: "bg-emerald-50 text-emerald-700 border-emerald-150",
-    isCOD: true,
-    pickupName: "Chronos Luxe",
-    pickupLoc: "Banani",
-    dropName: "Mahmudul Hasan",
-    dropLoc: "House 88, Road 4, Mohakhali DOHS",
-    distance: "2.9km",
-    deadline: "Deliver by 01:00 PM",
-    itemsCount: "1 item(s)"
-  },
+  
+ 
   {
     id: "#VD-90288",
     price: 4300,
@@ -80,20 +54,7 @@ const allOrdersList: AssignedOrder[] = [
     deadline: "Deliver by 01:30 PM",
     itemsCount: "1 item(s)"
   },
-  {
-    id: "#VD-90355",
-    price: 890,
-    status: "In Transit",
-    statusStyle: "bg-yellow-50 text-yellow-750 border-yellow-250",
-    isCOD: false,
-    pickupName: "EcoHome Tech",
-    pickupLoc: "Mirpur 10",
-    dropName: "Imran Kabir",
-    dropLoc: "House 3, Road 5, Pallabi",
-    distance: "5.5km",
-    deadline: "Deliver by 11:00 AM",
-    itemsCount: "3 item(s)"
-  },
+  
   {
     id: "#VD-90376",
     price: 5680,
@@ -138,20 +99,7 @@ const allOrdersList: AssignedOrder[] = [
     deadline: "Deliver by 12:30 PM",
     itemsCount: "2 item(s)"
   },
-  {
-    id: "#VD-90418",
-    price: 1190,
-    status: "Assigned",
-    statusStyle: "bg-blue-50 text-blue-700 border-blue-150",
-    isCOD: false,
-    pickupName: "EcoHome Tech",
-    pickupLoc: "Mirpur 10",
-    dropName: "Tanvir Ahmed",
-    dropLoc: "Flat 5B, Green Villa, Shewrapara",
-    distance: "2.1km",
-    deadline: "Deliver by 01:00 PM",
-    itemsCount: "1 item(s)"
-  }
+  
 ];
 
 type FilterTab = "All" | "Awaiting Pickup" | "Picked Up" | "In Transit" | "Delivered" | "Failed";
